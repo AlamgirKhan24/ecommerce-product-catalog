@@ -1,0 +1,48 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.product-tile {
+  position: relative;
+  min-height: 18rem;
+  padding: $space-6;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  background: $color-surface;
+  box-shadow: $shadow-card;
+  backdrop-filter: blur(22px);
+
+  h3 {
+    max-width: 12rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  p {
+    position: relative;
+    z-index: 2;
+    margin-top: $space-2;
+  }
+}
+
+.product-tile__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(72%, 19rem);
+  height: 72%;
+  object-fit: contain;
+}
+
+.product-tile__rating {
+  position: absolute;
+  right: $space-5;
+  bottom: $space-5;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: $space-2 $space-3;
+  border-radius: $radius-pill;
+  background: $color-surface-strong;
+  font-weight: 800;
+}

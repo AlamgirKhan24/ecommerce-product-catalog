@@ -1,0 +1,64 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.btn {
+  min-height: 4.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  padding: 0 $space-4 0 $space-7;
+  border-radius: $radius-pill;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base,
+    background $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.btn--accent {
+  background: $color-accent;
+  color: $color-ink;
+  box-shadow: 0 16px 34px rgba(217, 255, 69, 0.34);
+}
+
+.btn--dark {
+  background: $color-ink;
+  color: $color-white;
+  box-shadow: $shadow-button;
+}
+
+.btn__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+  margin-right: -0.65rem;
+  border-radius: 50%;
+  background: $color-ink;
+  color: $color-white;
+}
+
+.icon-btn {
+  width: 4.2rem;
+  height: 4.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: $color-surface-strong;
+  color: $color-ink;
+  box-shadow: 0 12px 28px rgba(20, 34, 40, 0.08);
+  transition:
+    transform $transition-base,
+    color $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    color: $color-red;
+  }
+}
