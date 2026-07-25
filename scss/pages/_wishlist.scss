@@ -1,0 +1,101 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.wishlist-hero,
+.wishlist-panel {
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 38px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,255,255,.56));
+  box-shadow: 0 18px 50px rgba(25,38,44,.1);
+  backdrop-filter: blur(22px);
+}
+
+.wishlist-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+  padding: clamp(28px, 4vw, 54px);
+}
+
+.wishlist-hero h1 {
+  margin: 14px 0 16px;
+  font-size: clamp(3.2rem, 6vw, 6rem);
+  line-height: .9;
+  letter-spacing: -0.06em;
+}
+
+.wishlist-hero p {
+  max-width: 620px;
+  color: #6d747c;
+  font-size: 1.05rem;
+}
+
+.wishlist-hero__count {
+  min-width: 180px;
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255,63,69,.16), transparent 62%),
+    rgba(255,255,255,.76);
+  box-shadow: 0 14px 34px rgba(25,38,44,.09);
+}
+
+.wishlist-hero__count strong {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,63,69,.68);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.wishlist-hero__count span {
+  color: #6d747c;
+  font-weight: 800;
+}
+
+.wishlist-panel {
+  padding: clamp(24px, 3vw, 38px);
+}
+
+.neo-product-card__wish.is-active {
+  background: #ff3f45;
+  color: #fff;
+}
+
+.wishlist-cart-btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  width: 100%;
+  border-radius: 999px;
+  background: #080b0d;
+  color: #fff;
+  font-weight: 850;
+  box-shadow: 0 14px 30px rgba(8,11,13,.16);
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.wishlist-cart-btn:hover {
+  transform: translateY(-2px);
+  background: #d9ff45;
+  color: #080b0d;
+}
+
+@media (max-width: 760px) {
+  .wishlist-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .wishlist-hero__count {
+    width: 100%;
+  }
+}

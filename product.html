@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product | Nitec Store</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+  <main class="neo-shell">
+    <header class="neo-nav" aria-label="Primary navigation">
+      <a class="neo-brand" href="index.html" aria-label="Nitec home">
+        <span class="neo-brand__mark"></span>
+        <span>nitec.</span>
+      </a>
+
+      <form class="neo-search" role="search">
+        <label class="visually-hidden" for="product-search">Search products</label>
+        <input id="product-search" type="search" placeholder="Search products...">
+        <button type="submit" aria-label="Search products">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4.2-4.2"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="neo-actions">
+        <a class="neo-icon" href="cart.html" aria-label="Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 8h14l-1.5 9h-11z"></path>
+            <path d="M7 8 6.2 5H3"></path>
+            <path d="M10 8a2 2 0 0 1 4 0"></path>
+            <circle cx="10" cy="20" r="1"></circle>
+            <circle cx="18" cy="20" r="1"></circle>
+          </svg>
+        </a>
+
+        <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
+          </svg>
+        </a>
+
+        <a class="neo-user" href="about.html">
+          <span>Ryman Alex</span>
+          <span class="neo-user__avatar" aria-hidden="true"></span>
+        </a>
+      </div>
+    </header>
+
+    <section class="product-detail">
+      <div class="product-gallery-panel">
+        <span class="neo-kicker">New Release</span>
+
+        <div class="product-gallery-panel__image">
+          <span class="product-orbit"></span>
+          <span class="product-dot product-dot--one"></span>
+          <span class="product-dot product-dot--two"></span>
+          <img src="assets/images/products/product-01.svg" alt="Sequoia Bass Headphone">
+        </div>
+
+        <div class="product-thumbs">
+          <button type="button" class="is-active">
+            <img src="assets/images/products/product-01.svg" alt="Blue headphone thumbnail">
+          </button>
+          <button type="button">
+            <img src="assets/images/products/product-03.svg" alt="Earbuds thumbnail">
+          </button>
+          <button type="button">
+            <img src="assets/images/products/product-05.svg" alt="Audio product thumbnail">
+          </button>
+        </div>
+      </div>
+
+      <article class="product-info-panel">
+        <div class="product-info-panel__top">
+          <span class="neo-pill">Headphones</span>
+          <span class="product-rating">★ 4.8 reviews</span>
+        </div>
+
+        <h1>Sequoia Bass Headphone</h1>
+
+        <p>
+          Premium wireless audio with clear highs, warm bass, soft cushions,
+          and a modern lightweight frame made for daily listening.
+        </p>
+
+        <div class="product-price">
+          <strong>$129.00</strong>
+          <del>$169.00</del>
+        </div>
+
+        <div class="product-option">
+          <span>Choose Color</span>
+          <div class="neo-swatches">
+            <button style="--swatch:#1767d8" aria-label="Blue"></button>
+            <button style="--swatch:#080b0d" aria-label="Black"></button>
+            <button style="--swatch:#f4f4f4" aria-label="Silver"></button>
+            <button style="--swatch:#ff3f45" aria-label="Red"></button>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <div class="quantity-control" aria-label="Quantity">
+            <button type="button">−</button>
+            <strong>1</strong>
+            <button type="button">+</button>
+          </div>
+
+          <a class="neo-cta" href="cart.html">
+            Add To Cart
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 8h14l-1.5 9h-11z"></path>
+                <path d="M7 8 6.2 5H3"></path>
+                <path d="M10 8a2 2 0 0 1 4 0"></path>
+              </svg>
+            </span>
+          </a>
+
+          <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="product-benefits">
+          <div>
+            <strong>40h</strong>
+            <span>Battery Life</span>
+          </div>
+          <div>
+            <strong>ANC</strong>
+            <span>Noise Control</span>
+          </div>
+          <div>
+            <strong>BT 5.3</strong>
+            <span>Fast Pairing</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="product-related">
+      <div class="neo-section-head">
+        <div>
+          <span class="neo-kicker">You may also like</span>
+          <h2>Related Products</h2>
+        </div>
+        <a class="neo-section-link" href="shop.html">
+          Shop all
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17 17 7"></path>
+            <path d="M8 7h9v9"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="neo-product-grid">
+        <article class="neo-product-card">
+          <button class="neo-product-card__wish" type="button" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24"><path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path></svg>
+          </button>
+          <a class="neo-product-card__media" href="product.html">
+            <img src="assets/images/products/product-03.svg" alt="Ceramic watch">
+          </a>
+          <div class="neo-product-card__body">
+            <span>Accessories</span>
+            <h3>Ceramic Field Watch</h3>
+            <div class="neo-product-card__meta"><strong>$154.00</strong><small>★ 4.7</small></div>
+          </div>
+        </article>
+
+        <article class="neo-product-card">
+          <button class="neo-product-card__wish" type="button" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24"><path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path></svg>
+          </button>
+          <a class="neo-product-card__media" href="product.html">
+            <img src="assets/images/products/product-04.svg" alt="Wireless lamp">
+          </a>
+          <div class="neo-product-card__body">
+            <span>Home Tech</span>
+            <h3>Wireless Table Lamp</h3>
+            <div class="neo-product-card__meta"><strong>$86.00</strong><small>★ 4.6</small></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

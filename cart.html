@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart | Nitec Store</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+  <main class="neo-shell">
+    <header class="neo-nav" aria-label="Primary navigation">
+      <a class="neo-brand" href="index.html" aria-label="Nitec home">
+        <span class="neo-brand__mark"></span>
+        <span>nitec.</span>
+      </a>
+
+      <form class="neo-search" role="search">
+        <label class="visually-hidden" for="cart-search">Search products</label>
+        <input id="cart-search" type="search" placeholder="Search products...">
+        <button type="submit" aria-label="Search products">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4.2-4.2"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="neo-actions">
+        <a class="neo-icon" href="cart.html" aria-label="Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 8h14l-1.5 9h-11z"></path>
+            <path d="M7 8 6.2 5H3"></path>
+            <path d="M10 8a2 2 0 0 1 4 0"></path>
+            <circle cx="10" cy="20" r="1"></circle>
+            <circle cx="18" cy="20" r="1"></circle>
+          </svg>
+        </a>
+
+        <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
+          </svg>
+        </a>
+
+        <a class="neo-user" href="about.html">
+          <span>Ryman Alex</span>
+          <span class="neo-user__avatar" aria-hidden="true"></span>
+        </a>
+      </div>
+    </header>
+
+    <section class="cart-hero">
+      <div>
+        <span class="neo-kicker">Secure Checkout</span>
+        <h1>Your Cart.</h1>
+        <p>Review your selected products, adjust quantities, and continue checkout with a clear order summary.</p>
+      </div>
+      <a class="neo-section-link" href="shop.html">
+        Continue shopping
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 17 17 7"></path>
+          <path d="M8 7h9v9"></path>
+        </svg>
+      </a>
+    </section>
+
+    <section class="cart-layout">
+      <div class="cart-items-panel">
+        <article class="cart-item">
+          <div class="cart-item__media">
+            <img src="assets/images/products/product-01.svg" alt="Sequoia Bass Headphone">
+          </div>
+          <div class="cart-item__info">
+            <span>Headphones</span>
+            <h2>Sequoia Bass Headphone</h2>
+            <p>Blue wireless audio with premium bass.</p>
+          </div>
+          <div class="quantity-control">
+            <button type="button">−</button>
+            <strong>1</strong>
+            <button type="button">+</button>
+          </div>
+          <strong class="cart-item__price">$129.00</strong>
+          <button class="cart-item__remove" type="button" aria-label="Remove item">×</button>
+        </article>
+
+        <article class="cart-item">
+          <div class="cart-item__media">
+            <img src="assets/images/products/product-03.svg" alt="Ceramic Field Watch">
+          </div>
+          <div class="cart-item__info">
+            <span>Accessories</span>
+            <h2>Ceramic Field Watch</h2>
+            <p>Minimal watch with clean ceramic finish.</p>
+          </div>
+          <div class="quantity-control">
+            <button type="button">−</button>
+            <strong>1</strong>
+            <button type="button">+</button>
+          </div>
+          <strong class="cart-item__price">$154.00</strong>
+          <button class="cart-item__remove" type="button" aria-label="Remove item">×</button>
+        </article>
+      </div>
+
+      <aside class="cart-summary">
+        <span class="neo-kicker">Order Summary</span>
+
+        <div class="cart-summary__rows">
+          <div>
+            <span>Subtotal</span>
+            <strong>$283.00</strong>
+          </div>
+          <div>
+            <span>Shipping</span>
+            <strong>$12.00</strong>
+          </div>
+          <div>
+            <span>Discount</span>
+            <strong>-$20.00</strong>
+          </div>
+        </div>
+
+        <div class="cart-summary__total">
+          <span>Total</span>
+          <strong>$275.00</strong>
+        </div>
+
+        <form class="cart-coupon">
+          <label class="visually-hidden" for="coupon">Coupon code</label>
+          <input id="coupon" type="text" placeholder="Promo code">
+          <button type="button">Apply</button>
+        </form>
+
+        <a class="neo-cta" href="contact.html">
+          Checkout Now
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7"></path>
+              <path d="M8 7h9v9"></path>
+            </svg>
+          </span>
+        </a>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

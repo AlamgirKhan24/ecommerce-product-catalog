@@ -1,0 +1,107 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+
+.error-page {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+  gap: 24px;
+  align-items: center;
+  min-height: 650px;
+  padding: clamp(32px, 5vw, 64px);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 78% 45%, rgba(41,207,214,.2), transparent 24rem),
+    linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.56));
+  box-shadow: 0 18px 50px rgba(25,38,44,.1);
+  backdrop-filter: blur(22px);
+}
+
+.error-page__copy strong {
+  display: block;
+  margin-top: 28px;
+  color: transparent;
+  -webkit-text-stroke: 1.8px rgba(8,11,13,.34);
+  font-size: clamp(5rem, 12vw, 11rem);
+  line-height: .8;
+  font-weight: 900;
+}
+
+.error-page h1 {
+  max-width: 760px;
+  margin: 26px 0 18px;
+  font-size: clamp(3rem, 5.6vw, 5.8rem);
+  line-height: .9;
+  letter-spacing: -0.065em;
+}
+
+.error-page p {
+  max-width: 560px;
+  color: #6d747c;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.error-page__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.error-page__visual {
+  position: relative;
+  min-height: 460px;
+  display: grid;
+  place-items: center;
+}
+
+.error-page__visual img {
+  position: relative;
+  z-index: 2;
+  width: min(560px, 96%);
+  filter: drop-shadow(0 34px 42px rgba(10,35,66,.22));
+}
+
+.error-orbit {
+  position: absolute;
+  width: min(520px, 88%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(8,11,13,.14);
+}
+
+.error-dot {
+  position: absolute;
+  z-index: 3;
+  border-radius: 50%;
+  box-shadow: 0 16px 32px rgba(23,103,216,.28);
+}
+
+.error-dot--one {
+  width: 22px;
+  height: 22px;
+  left: 16%;
+  bottom: 24%;
+  background: #1767d8;
+}
+
+.error-dot--two {
+  width: 30px;
+  height: 30px;
+  right: 19%;
+  top: 18%;
+  background: linear-gradient(135deg, #fff, #9aa3aa);
+}
+
+@media (max-width: 920px) {
+  .error-page {
+    grid-template-columns: 1fr;
+  }
+
+  .error-page__visual {
+    min-height: 360px;
+  }
+}
