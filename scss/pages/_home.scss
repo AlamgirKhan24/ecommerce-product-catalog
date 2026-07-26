@@ -1,5 +1,6 @@
 @use '../abstracts/colors' as *;
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .home-layout {
   display: grid;
@@ -1478,10 +1479,6 @@
     flex-direction: column;
   }
 }
-@use '../abstracts/variables' as *;
-@use '../abstracts/colors' as *;
-@use '../abstracts/mixins' as *;
-
 // ---------------------------------------------
 // Additions — bento grid elements not yet covered
 // ---------------------------------------------

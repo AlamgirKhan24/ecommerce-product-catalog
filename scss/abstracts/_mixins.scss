@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use './colors' as *;
 @use './variables' as *;
 
@@ -6,4 +7,89 @@
   border-radius: $radius;
   box-shadow: $shadow;
   border: 1px solid var(--color-border);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: #{$width} / #{$height};
+}
+
+@mixin button-reset {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 3px solid rgba($color-blue, 0.35);
+    outline-offset: 3px;
+  }
+}
+
+@mixin custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: $color-grey-300 transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-grey-300;
+    border-radius: $radius-full;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  $breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1440px
+  );
+
+  @media (min-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  $breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1440px
+  );
+
+  @media (max-width: (map.get($breakpoints, $breakpoint) - 0.02px)) {
+    @content;
+  }
 }

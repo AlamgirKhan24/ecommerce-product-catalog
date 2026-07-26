@@ -1,6 +1,16 @@
 $font-primary: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 $font-display: $font-primary;
 
+$fs-sm: 0.875rem;
+$fs-md: 1rem;
+$fs-lg: 1.25rem;
+
+$lh-normal: 1.5;
+
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
 $container-max: 1520px;
 $page-padding: clamp(1rem, 3vw, 3rem);
 
@@ -10,6 +20,7 @@ $radius-md: 28px;
 $radius-lg: 38px;
 $radius-xl: 54px;
 $radius-pill: 999px;
+$radius-full: $radius-pill;
 
 $space-1: 0.25rem;
 $space-2: 0.5rem;
@@ -25,3 +36,6 @@ $space-10: 4rem;
 $transition-fast: 160ms ease;
 $transition-base: 260ms ease;
 $transition-slow: 420ms ease;
+
+$z-modal: 1000;
+$z-toast: 1100;

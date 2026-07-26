@@ -24,6 +24,35 @@ $color-green: #20d658;
 $color-red: #ff3f45;
 $color-orange: #ff8a1d;
 
+$color-navy: $color-ink;
+$color-grey-50: #fafbf9;
+$color-grey-100: #f3f6f4;
+$color-grey-200: #d8e0dd;
+$color-grey-300: #b8c2bf;
+$color-grey-400: #98a3a0;
+$color-grey-500: #6d747c;
+$color-grey-600: #4f5961;
+$color-grey-700: #323c43;
+$color-grey-800: #1f2933;
+$color-grey-900: #111820;
+
+$color-bg-page: $color-bg;
+$color-bg-card: $color-surface-strong;
+$color-bg-elevated: $color-white;
+$color-text-primary: $color-ink;
+$color-text-secondary: $color-ink-soft;
+$color-text-muted: $color-muted;
+$color-text-inverse: $color-white;
+$color-border-strong: $color-border-dark;
+$color-accent-text: $color-ink;
+$color-success: $color-green;
+$color-error: $color-red;
+$color-warning: $color-orange;
+$color-info: $color-blue;
+$color-overlay: rgba(8, 11, 13, 0.48);
+
 $shadow-soft: 0 24px 80px rgba(30, 45, 52, 0.18);
+$shadow-sm: 0 10px 26px rgba(25, 38, 44, 0.1);
 $shadow-card: 0 18px 48px rgba(25, 38, 44, 0.12);
+$shadow-lg: 0 32px 90px rgba(8, 11, 13, 0.18);
 $shadow-button: 0 12px 28px rgba(8, 11, 13, 0.14);

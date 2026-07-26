@@ -23,7 +23,7 @@ export function getRelatedProducts(products, currentProduct, limit = 4) {
 
 import { formatPrice } from '../utils/formatter.js';
 import { addToCart } from './cart.js';
-import { toggleWishlist, isWishlisted } from './whishlist.js';
+import { toggleWishlist, isWishlisted } from './wishlist.js';
 import { renderProductCard } from '../ui/productcard.js';
 import { empty } from '../utils/dom.js';
 

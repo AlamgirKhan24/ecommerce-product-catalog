@@ -9,7 +9,7 @@
 
 .product-gallery-panel__image {
   position: relative;
-  @include card-surface($radius-xl, $shadow-sm);
+  @include card-surface($radius-xl);
   @include flex-center;
   @include aspect-ratio(1, 1);
   overflow: hidden;

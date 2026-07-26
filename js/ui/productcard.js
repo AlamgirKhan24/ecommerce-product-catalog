@@ -1,6 +1,6 @@
 import { createEl } from '../utils/dom.js';
 import { formatPrice } from '../utils/formatter.js';
-import { isWishlisted, toggleWishlist } from '../modules/whishlist.js';
+import { isWishlisted, toggleWishlist } from '../modules/wishlist.js';
 
 // ---------------------------------------------
 // Renders a single product into your real .neo-product-card markup

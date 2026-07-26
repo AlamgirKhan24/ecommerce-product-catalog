@@ -1,4 +1,4 @@
-import { getWishlistItems, removeFromWishlist } from '../modules/whishlist.js';
+import { getWishlistItems, removeFromWishlist } from '../modules/wishlist.js';
 import { createEl, empty } from '../utils/dom.js';
 import { formatPrice } from '../utils/formatter.js';
 import { EVENTS } from '../core/constants.js';
