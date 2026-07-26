@@ -1,0 +1,113 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+// ---------------------------------------------
+// Base field styling — shared by contact.html and cart-coupon
+// ---------------------------------------------
+.form-field {
+  @include flex-column;
+  gap: $space-2;
+  margin-bottom: $space-4;
+
+  label {
+    font-size: $fs-sm;
+    font-weight: $fw-medium;
+    color: $color-text-primary;
+  }
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  border: 1.5px solid $color-border;
+  background: $color-bg-card;
+  font: inherit;
+  font-size: $fs-sm;
+  color: $color-text-primary;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-black;
+    box-shadow: 0 0 0 3px rgba($color-black, 0.06);
+  }
+
+  &.is-invalid {
+    border-color: $color-error;
+  }
+}
+
+.form-textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: $color-error;
+}
+
+// ---------------------------------------------
+// Cart coupon form — matches your real .cart-coupon markup
+// ---------------------------------------------
+.cart-coupon {
+  display: flex;
+  gap: $space-2;
+  margin-block: $space-5;
+
+  input {
+    flex: 1;
+    padding: $space-3 $space-4;
+    border-radius: $radius-full;
+    border: 1.5px solid $color-border;
+    background: $color-bg-page;
+    font-size: $fs-sm;
+
+    &:focus {
+      outline: none;
+      border-color: $color-black;
+    }
+  }
+
+  button {
+    @include button-reset;
+    @include focus-ring;
+    padding: $space-3 $space-5;
+    border-radius: $radius-full;
+    background: $color-black;
+    color: $color-text-inverse;
+    font-size: $fs-sm;
+    font-weight: $fw-medium;
+    white-space: nowrap;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: $color-grey-800;
+    }
+  }
+}
+
+// ---------------------------------------------
+// Custom checkbox/radio (used if you add stock/rating filters later)
+// ---------------------------------------------
+.form-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  cursor: pointer;
+
+  input {
+    width: 1.125rem;
+    height: 1.125rem;
+    accent-color: $color-black;
+    cursor: pointer;
+  }
+}

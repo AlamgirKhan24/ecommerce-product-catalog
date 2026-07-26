@@ -1,0 +1,137 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+// ---------------------------------------------
+// Modal — built by js/ui/modal.js, injected into <body> on demand
+// ---------------------------------------------
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  background: $color-overlay;
+  @include flex-center;
+  padding: $space-5;
+  animation: modal-fade-in $transition-base ease-out;
+}
+
+.modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 32rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: $color-bg-card;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-lg;
+  padding: $space-6;
+  animation: modal-scale-in $transition-base ease-out;
+  @include custom-scrollbar;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal-close {
+  @include button-reset;
+  @include flex-center;
+  position: absolute;
+  top: $space-4;
+  right: $space-4;
+  width: 2rem;
+  height: 2rem;
+  border-radius: $radius-full;
+  background: $color-grey-100;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: $color-text-secondary;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $color-grey-200;
+    color: $color-text-primary;
+  }
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-scale-in {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+// ---------------------------------------------
+// Quick view modal content (built by openQuickView in modal.js)
+// ---------------------------------------------
+.quick-view {
+  display: grid;
+  gap: $space-5;
+  padding-top: $space-3;
+
+  @include respond-to('sm') {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.quick-view__image {
+  width: 100%;
+  border-radius: $radius-lg;
+  object-fit: cover;
+  background: $color-grey-50;
+}
+
+.quick-view__body {
+  @include flex-column;
+  gap: $space-2;
+}
+
+.quick-view__category {
+  font-size: 0.75rem;
+  font-weight: $fw-medium;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quick-view__title {
+  font-size: $fs-lg;
+  font-weight: $fw-semibold;
+}
+
+.quick-view__price {
+  font-size: $fs-md;
+  font-weight: $fw-semibold;
+  color: $color-text-primary;
+}
+
+.quick-view__description {
+  font-size: $fs-sm;
+  color: $color-text-secondary;
+  line-height: $lh-normal;
+  margin-bottom: $space-3;
+}
+
+// ---------------------------------------------
+// Generic empty states — .wishlist-empty (whishlistUI.js) and
+// .cart-empty (carUI.js) share this same treatment
+// ---------------------------------------------
+.wishlist-empty,
+.cart-empty {
+  grid-column: 1 / -1;
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: $space-4;
+  padding: $space-9 $space-5;
+  color: $color-text-secondary;
+
+  p {
+    font-size: $fs-md;
+  }
+}
