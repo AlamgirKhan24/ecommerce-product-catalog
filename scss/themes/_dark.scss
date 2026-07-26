@@ -1,0 +1,35 @@
+@use '../abstracts/colors' as *;
+
+// ---------------------------------------------
+// Dark theme — overrides applied when <html data-theme="dark">
+// Accent (lime) and status colors stay the same for brand consistency;
+// only surfaces, text, and borders invert
+// ---------------------------------------------
+
+[data-theme='dark'] {
+  --color-bg-page: #{$color-grey-900};
+  --color-bg-card: #{$color-grey-800};
+  --color-bg-elevated: #{$color-grey-700};
+
+  --color-text-primary: #FAFAF8;
+  --color-text-secondary: #{$color-grey-400};
+  --color-text-muted: #{$color-grey-500};
+  --color-text-inverse: #{$color-black};
+
+  --color-border: #{$color-grey-700};
+  --color-border-strong: #{$color-grey-600};
+
+  --color-overlay: rgba(0, 0, 0, 0.7);
+}
+
+// Slightly reduce shadow intensity in dark mode — dark shadows on dark
+// backgrounds look muddy rather than elevated
+[data-theme='dark'] {
+  .card,
+  .hero-card,
+  .bento-card,
+  .product-card,
+  .modal-dialog {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}

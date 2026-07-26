@@ -22,7 +22,7 @@
   max-width: 32rem;
   max-height: 90vh;
   overflow-y: auto;
-  background: $color-bg-card;
+  background: var(--color-bg-card);
   border-radius: $radius-xl;
   box-shadow: $shadow-lg;
   padding: $space-6;
@@ -43,15 +43,15 @@
   width: 2rem;
   height: 2rem;
   border-radius: $radius-full;
-  background: $color-grey-100;
+  background: var(--color-bg-page);
   font-size: 1.25rem;
   line-height: 1;
-  color: $color-text-secondary;
+  color: var(--color-text-secondary);
   transition: background $transition-fast;
 
   &:hover {
     background: $color-grey-200;
-    color: $color-text-primary;
+    color: var(--color-text-primary);
   }
 }
 
@@ -93,7 +93,7 @@
 .quick-view__category {
   font-size: 0.75rem;
   font-weight: $fw-medium;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -106,12 +106,12 @@
 .quick-view__price {
   font-size: $fs-md;
   font-weight: $fw-semibold;
-  color: $color-text-primary;
+  color: var(--color-text-primary);
 }
 
 .quick-view__description {
   font-size: $fs-sm;
-  color: $color-text-secondary;
+  color: var(--color-text-secondary);
   line-height: $lh-normal;
   margin-bottom: $space-3;
 }
@@ -129,7 +129,7 @@
   text-align: center;
   gap: $space-4;
   padding: $space-9 $space-5;
-  color: $color-text-secondary;
+  color: var(--color-text-secondary);
 
   p {
     font-size: $fs-md;

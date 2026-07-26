@@ -1,0 +1,48 @@
+@use '../abstracts/colors' as *;
+
+// ---------------------------------------------
+// Theme — CSS custom properties, generated from our SCSS color tokens
+// These are what components should reference via var(--...) for anything
+// that needs to flip between light/dark. SCSS $color-* vars remain the
+// source of truth and are used to compute these defaults.
+// ---------------------------------------------
+
+:root {
+  // Surfaces
+  --color-bg-page: #{$color-bg-page};
+  --color-bg-card: #{$color-bg-card};
+  --color-bg-elevated: #{$color-bg-elevated};
+
+  // Text
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-inverse: #{$color-text-inverse};
+
+  // Borders
+  --color-border: #{$color-border};
+  --color-border-strong: #{$color-border-strong};
+
+  // Brand / accent (stays constant across themes — lime is lime either way)
+  --color-accent: #{$color-accent};
+  --color-accent-text: #{$color-accent-text};
+  --color-black: #{$color-black};
+
+  // Status
+  --color-success: #{$color-success};
+  --color-error: #{$color-error};
+  --color-warning: #{$color-warning};
+  --color-info: #{$color-info};
+
+  // Overlay
+  --color-overlay: #{$color-overlay};
+
+  // Smooth transition between themes when toggled
+  transition: background-color $transition-base, color $transition-base;
+}
+
+// Apply the custom properties to real elements site-wide
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+}

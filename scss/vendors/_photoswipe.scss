@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+// ---------------------------------------------
+// PhotoSwipe — minor chrome tweaks to match brand rounding/spacing
+// ---------------------------------------------
+
+.pswp__button {
+  border-radius: $radius-full;
+}
+
+.pswp__counter {
+  font-family: $font-primary;
+  font-size: $fs-sm;
+}
+
+.pswp__top-bar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}

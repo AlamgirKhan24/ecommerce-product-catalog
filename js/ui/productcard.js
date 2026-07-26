@@ -61,3 +61,46 @@ export function renderProductCard(product) {
     [wishBtn, media, body]
   );
 }
+import { getPageRange } from '../modules/pagination.js';
+import { createEl } from '../utils/dom.js';
+
+function renderPaginationControls() {
+  const nav = document.querySelector('[data-pagination]');
+  if (!nav) return;
+
+  const { page, totalPages } = getCurrentPagination();
+  nav.innerHTML = '';
+  if (totalPages <= 1) return;
+
+  const prevBtn = createEl(
+    'button',
+    { class: 'pagination__arrow', 'aria-label': 'Previous page', disabled: page === 1 ? '' : null },
+    '‹'
+  );
+  prevBtn.addEventListener('click', () => goToPage(page - 1));
+  nav.appendChild(prevBtn);
+
+  getPageRange(page, totalPages).forEach((entry) => {
+    if (entry === '…') {
+      nav.appendChild(createEl('span', { class: 'pagination__ellipsis' }, '…'));
+      return;
+    }
+    const btn = createEl(
+      'button',
+      { class: `pagination__btn${entry === page ? ' is-active' : ''}` },
+      String(entry)
+    );
+    btn.addEventListener('click', () => goToPage(entry));
+    nav.appendChild(btn);
+  });
+
+  const nextBtn = createEl(
+    'button',
+    { class: 'pagination__arrow', 'aria-label': 'Next page', disabled: page === totalPages ? '' : null },
+    '›'
+  );
+  nextBtn.addEventListener('click', () => goToPage(page + 1));
+  nav.appendChild(nextBtn);
+}
+
+document.addEventListener('productgrid:rendered', renderPaginationControls);

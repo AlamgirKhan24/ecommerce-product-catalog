@@ -1,0 +1,22 @@
+@use '../abstracts/colors' as *;
+
+// ---------------------------------------------
+// Light theme — same values as :root defaults, made explicit
+// so [data-theme="light"] works even if a dark theme was toggled first
+// ---------------------------------------------
+
+[data-theme='light'] {
+  --color-bg-page: #{$color-bg-page};
+  --color-bg-card: #{$color-bg-card};
+  --color-bg-elevated: #{$color-bg-elevated};
+
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-inverse: #{$color-text-inverse};
+
+  --color-border: #{$color-border};
+  --color-border-strong: #{$color-border-strong};
+
+  --color-overlay: #{$color-overlay};
+}

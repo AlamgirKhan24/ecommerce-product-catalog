@@ -1,0 +1,65 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+// ---------------------------------------------
+// Swiper.js — visual overrides to match site aesthetic
+// (Swiper's own CSS handles layout/mechanics; this file only recolors)
+// ---------------------------------------------
+
+.swiper {
+  padding-bottom: $space-6; // room for pagination dots
+}
+
+.swiper-slide {
+  height: auto; // cards in a row should match height
+}
+
+// Navigation arrows — reuse our .btn-icon look instead of Swiper's default chevrons
+.swiper-button-next,
+.swiper-button-prev {
+  @include flex-center;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  background: $color-bg-card;
+  border-radius: $radius-full;
+  box-shadow: $shadow-sm;
+  transition: background $transition-fast;
+
+  &::after {
+    font-size: 0.9rem !important;
+    color: $color-text-primary;
+  }
+
+  &:hover {
+    background: $color-grey-100;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.35;
+  }
+}
+
+// Pagination dots
+.swiper-pagination-bullet {
+  background: $color-grey-300;
+  opacity: 1;
+  width: 0.5rem;
+  height: 0.5rem;
+  transition: background $transition-fast, width $transition-fast;
+}
+
+.swiper-pagination-bullet-active {
+  background: $color-black;
+  width: 1.25rem;
+  border-radius: $radius-full;
+}
+
+// Fade-effect hero slider container needs an explicit height on mobile
+.js-hero-slider {
+  min-height: 24rem;
+
+  @include respond-to('lg') {
+    min-height: 30rem;
+  }
+}

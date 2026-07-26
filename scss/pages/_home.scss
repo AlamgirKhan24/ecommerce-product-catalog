@@ -1478,3 +1478,150 @@
     flex-direction: column;
   }
 }
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+// ---------------------------------------------
+// Additions — bento grid elements not yet covered
+// ---------------------------------------------
+
+.site-shell {
+  min-height: 100vh;
+  @include flex-column;
+}
+
+// Generic bento card wrapper (Popular Colors, New Gen X-Bud, etc.)
+.card {
+  @include card-surface($radius-lg, $shadow-sm);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: $space-5;
+  position: relative;
+}
+
+.card--compact {
+  padding: $space-4;
+}
+
+// Small circular arrow link in the top-right of feature cards
+.card__arrow {
+  @include flex-center;
+  @include button-reset;
+  @include focus-ring;
+  position: absolute;
+  top: $space-4;
+  right: $space-4;
+  width: 2rem;
+  height: 2rem;
+  border-radius: $radius-full;
+  background: var(--color-bg-page);
+  transition: background $transition-fast, transform $transition-fast;
+
+  .icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    color: var(--color-text-primary);
+  }
+
+  &:hover {
+    background: $color-grey-100;
+    transform: scale(1.05);
+  }
+}
+
+// Reused small circular icon button (e.g. wishlist link on "More Products" card)
+.icon-btn {
+  @include flex-center;
+  @include focus-ring;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: $radius-full;
+  background: var(--color-bg-page);
+  flex-shrink: 0;
+  transition: background $transition-fast;
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-text-primary);
+  }
+
+  &:hover {
+    background: $color-grey-100;
+  }
+}
+
+.center-between {
+  @include flex-between;
+  gap: $space-3;
+}
+
+// Popular Colors swatch row
+.color-dots {
+  display: flex;
+  gap: $space-2;
+  margin-top: $space-4;
+}
+
+.color-dot {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: $radius-full;
+  background: var(--dot-color, $color-grey-300);
+  cursor: pointer;
+  transition: transform $transition-fast;
+  border: 2px solid var(--color-bg-card);
+  box-shadow: 0 0 0 1px var(--color-border);
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+// Small pill badge — "Popular" / "★ 4.6 reviews"
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  background: var(--color-bg-page);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: $fw-medium;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+}
+
+// Rating tag on the "release-card" product tile
+.product-tile__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  font-size: $fs-sm;
+  font-weight: $fw-semibold;
+  color: var(--color-text-primary);
+  margin-top: $space-2;
+}
+
+// Floating decorative dots behind the hero product image
+.hero-showcase__float {
+  position: absolute;
+  border-radius: $radius-full;
+  opacity: 0.85;
+
+  &--one {
+    top: 12%;
+    left: 8%;
+    width: 0.75rem;
+    height: 0.75rem;
+    background: $color-grey-300;
+  }
+
+  &--two {
+    bottom: 15%;
+    right: 10%;
+    width: 1rem;
+    height: 1rem;
+    background: $color-navy;
+  }
+}

@@ -1,0 +1,87 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+// ---------------------------------------------
+// Product gallery — main image + thumbnail strip (product.html)
+// Pairs with PhotoSwipe (lightbox) and Swiper (thumbnail strip)
+// ---------------------------------------------
+
+.product-gallery-panel__image {
+  position: relative;
+  @include card-surface($radius-xl, $shadow-sm);
+  @include flex-center;
+  @include aspect-ratio(1, 1);
+  overflow: hidden;
+  cursor: zoom-in;
+
+  img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: transform $transition-base;
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+  }
+}
+
+// Decorative orbit ring + floating dots (already referenced in product.html markup)
+.product-orbit {
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed $color-grey-200;
+  border-radius: $radius-full;
+  pointer-events: none;
+}
+
+.product-dot {
+  position: absolute;
+  border-radius: $radius-full;
+  background: $color-navy;
+  opacity: 0.7;
+
+  &--one { top: 15%; left: 12%; width: 0.75rem; height: 0.75rem; }
+  &--two { bottom: 18%; right: 15%; width: 1rem; height: 1rem; }
+}
+
+// Thumbnail strip — mounted by vendors/swiper.js's initThumbnailSlider
+.product-thumbs {
+  display: flex;
+  gap: $space-3;
+  margin-top: $space-4;
+
+  button {
+    @include button-reset;
+    @include focus-ring;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: $radius-md;
+    overflow: hidden;
+    border: 2px solid transparent;
+    opacity: 0.6;
+    transition: opacity $transition-fast, border-color $transition-fast;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &.is-active {
+      opacity: 1;
+      border-color: $color-black;
+    }
+  }
+}
+
+// PhotoSwipe zoom cursor hint on the media wrapper used as the gallery root
+.js-product-gallery {
+  cursor: zoom-in;
+}

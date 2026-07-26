@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+// ---------------------------------------------
+// Toastify.js — style overrides
+// Most visual properties (background color per type, border-radius,
+// padding, shadow) are already set inline via js/vendors/toastify.js's
+// `style` option. This file covers what inline styles can't reach:
+// font, stacking gaps, and small responsive tweaks.
+// ---------------------------------------------
+
+.toastify {
+  font-family: $font-primary !important;
+  font-weight: $fw-medium !important;
+  z-index: $z-toast !important;
+
+  // Gap between multiple stacked toasts
+  &:not(:last-child) {
+    margin-bottom: $space-3;
+  }
+}
+
+// Toastify's built-in close "x" — recolor to match our inverse text on colored backgrounds
+.toastify .toast-close {
+  opacity: 0.85;
+  color: $color-text-inverse;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Full-width, bottom-anchored toasts on small screens instead of a floating top corner
+@include respond-below('sm') {
+  .toastify {
+    left: $space-3 !important;
+    right: $space-3 !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}

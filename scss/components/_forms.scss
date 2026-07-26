@@ -13,7 +13,7 @@
   label {
     font-size: $fs-sm;
     font-weight: $fw-medium;
-    color: $color-text-primary;
+    color: var(--color-text-primary);
   }
 }
 
@@ -23,15 +23,15 @@
   width: 100%;
   padding: $space-3 $space-4;
   border-radius: $radius-md;
-  border: 1.5px solid $color-border;
-  background: $color-bg-card;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-card);
   font: inherit;
   font-size: $fs-sm;
-  color: $color-text-primary;
+  color: var(--color-text-primary);
   transition: border-color $transition-fast, box-shadow $transition-fast;
 
   &::placeholder {
-    color: $color-text-muted;
+    color: var(--color-text-muted);
   }
 
   &:focus {
@@ -67,8 +67,8 @@
     flex: 1;
     padding: $space-3 $space-4;
     border-radius: $radius-full;
-    border: 1.5px solid $color-border;
-    background: $color-bg-page;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-bg-page);
     font-size: $fs-sm;
 
     &:focus {

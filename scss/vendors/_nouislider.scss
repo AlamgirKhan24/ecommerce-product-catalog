@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+// ---------------------------------------------
+// noUiSlider — recolor to match brand instead of default blue
+// (noUiSlider.css handles all layout/mechanics; this only recolors)
+// ---------------------------------------------
+
+.noUi-target {
+  background: var(--color-border);
+  border: none;
+  box-shadow: none;
+  height: 4px;
+}
+
+.noUi-connect {
+  background: $color-black;
+}
+
+.noUi-handle {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  border-radius: $radius-full;
+  background: $color-bg-card;
+  border: 2px solid $color-black;
+  box-shadow: $shadow-sm;
+  top: -0.5rem !important;
+  right: -0.625rem !important; // noUiSlider centers via right offset on horizontal sliders
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &::before,
+  &::after {
+    display: none; // remove noUiSlider's default handle tick marks
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($color-black, 0.12);
+  }
+}
