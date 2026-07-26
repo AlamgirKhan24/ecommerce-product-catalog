@@ -14,6 +14,7 @@ import { initHero } from '../ui/hero.js';
 import { initProductGrid } from '../ui/productgrid.js';
 import { initWishlistPage } from '../ui/whishlistUI.js';
 import { initCartPage } from '../ui/carUI.js';
+import { initFeaturedProducts } from '../ui/featuredProducts.js';
 
 import { initAOS } from '../vendors/aos.js';
 import { initLazyLoad } from '../vendors/lazyside.js';
@@ -53,6 +54,7 @@ async function init() {
 
   // Page-specific hero animation (no-ops if not on the home page)
   initHero();
+  initFeaturedProducts();
 
   // Load the product dataset once, then fan out to whichever
   // page-specific feature actually needs it

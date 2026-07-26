@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body class="home-page">
   <main class="neo-shell">
@@ -203,17 +204,57 @@
       </div>
     </section>
     <footer class="neo-footer-strip">
-  <div>
-    <strong>nitec.</strong>
-    <span>Premium ecommerce catalog for modern tech essentials.</span>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html" aria-label="Nitec home">
+        <span class="footer-logo__mark" aria-hidden="true"></span>
+        <span>nitec.</span>
+      </a>
+      <p>Premium ecommerce catalog for modern tech essentials. Designed for a clean, confident, and elevated shopping experience.</p>
+    </div>
+
+    <div class="footer-contact" aria-label="Contact information">
+      <a class="footer-contact__item" href="mailto:support@nitec.store">
+        <i data-lucide="mail" aria-hidden="true"></i>
+        <span>support@nitec.store</span>
+      </a>
+      <a class="footer-contact__item" href="tel:+1234567890">
+        <i data-lucide="phone" aria-hidden="true"></i>
+        <span>+1 (234) 567-890</span>
+      </a>
+      <div class="footer-contact__item">
+        <i data-lucide="map-pin" aria-hidden="true"></i>
+        <address>San Francisco, CA · United States</address>
+      </div>
+    </div>
+
+    <div class="footer-social" aria-label="Social media">
+      <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+      <a href="https://x.com" aria-label="X" target="_blank" rel="noreferrer"><i data-lucide="twitter" aria-hidden="true"></i></a>
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer"><i data-lucide="instagram" aria-hidden="true"></i></a>
+      <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noreferrer"><i data-lucide="facebook" aria-hidden="true"></i></a>
+    </div>
   </div>
 
-  <nav aria-label="Footer navigation">
-    <a href="shop.html">Shop</a>
-    <a href="product.html">Product</a>
-    <a href="wishlist.html">Wishlist</a>
-    <a href="cart.html">Cart</a>
-  </nav>
+  <div class="footer-divider" aria-hidden="true"></div>
+
+  <div class="footer-bottom">
+    <div class="footer-meta">
+      <span>© <span data-year>2026</span> Nitec. All rights reserved.</span>
+      <span>v1.0</span>
+      <span>Built with &hearts;</span>
+    </div>
+
+    <div class="footer-legal" aria-label="Legal links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <button class="footer-top" type="button" data-back-to-top aria-label="Back to top">
+        <i data-lucide="arrow-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
 </footer>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.js"></script>

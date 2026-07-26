@@ -3,11 +3,10 @@
     <div class="app-sidebar__brand">
       <a class="app-sidebar__logo" href="index.html" aria-label="Nitec home">
         <span class="app-sidebar__logo-mark" aria-hidden="true"></span>
-        <span class="app-sidebar__logo-text">nitec.</span>
       </a>
 
-      <button class="app-sidebar__close" type="button" data-sidebar-close aria-label="Close navigation">
-        <i data-lucide="x" aria-hidden="true"></i>
+      <button class="app-sidebar-toggle" type="button" data-sidebar-toggle aria-controls="app-sidebar" aria-expanded="true">
+        <i data-lucide="panel-left-close" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -50,11 +49,6 @@
       </a>
     </nav>
 
-    <div class="app-sidebar__footer">
-      <button class="app-sidebar__collapse" type="button" data-sidebar-collapse aria-label="Collapse sidebar" aria-pressed="false">
-        <i data-lucide="panel-left-close" aria-hidden="true"></i>
-        <span>Collapse</span>
-      </button>
-    </div>
+    <div class="app-sidebar__footer" aria-hidden="true"></div>
   </div>
 </aside>

@@ -12,4 +12,8 @@ export function initFooter() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  footer.querySelector('[data-back-to-top]')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
