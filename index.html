@@ -480,78 +480,94 @@
   </div>
 </section>
 
-<footer class="neo-footer-strip">
-  <div class="pro-footer__top">
-    <div class="pro-footer__brand">
-      <a class="footer-logo" href="index.html" aria-label="Nitec home">
-        <span class="footer-logo__mark" aria-hidden="true"></span>
-        <span>nitec.</span>
+<footer class="neo-footer-strip" aria-labelledby="site-footer-title">
+  <h2 id="site-footer-title" class="visually-hidden">Nite site footer</h2>
+
+  <div class="nite-footer__grid">
+
+    <!-- Column 1: Brand -->
+    <div class="nite-footer__brand nite-fade" style="--d:0ms">
+      <a class="nite-logo" href="index.html">
+        <span class="nite-logo__mark" aria-hidden="true"></span>
+        <span class="nite-logo__text">Nite</span>
       </a>
-      <p>Premium ecommerce catalog for modern tech essentials. Curated products, secure checkout, and a shopping experience built to feel effortless.</p>
-      <div class="pro-footer__social" aria-label="Social media">
-        <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i></a>
-        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i data-lucide="linkedin" aria-hidden="true"></i></a>
-        <a href="https://x.com" aria-label="X" target="_blank" rel="noreferrer"><i data-lucide="twitter" aria-hidden="true"></i></a>
-        <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer"><i data-lucide="instagram" aria-hidden="true"></i></a>
-        <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noreferrer"><i data-lucide="facebook" aria-hidden="true"></i></a>
-      </div>
+      <p class="nite-footer__desc">
+        Thoughtfully curated tech and lifestyle essentials.
+        Designed for everyday performance, delivered with care
+        to your door.
+      </p>
+
+      <ul class="nite-social" aria-label="Nite on social media">
+        <li>
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.84.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 9h4v12H3V9Zm6 0h3.84v1.64h.05c.53-1 1.84-2.06 3.78-2.06C20.7 8.58 22 10.7 22 14.02V21h-4v-6.18c0-1.47-.03-3.36-2.05-3.36-2.06 0-2.37 1.6-2.37 3.25V21H9V9Z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.9l-4.62-6.04L5.94 21H2.91l7.06-8.07L2.5 3h6.05l4.18 5.53L17.53 3Zm-1.06 16.2h1.67L7.6 4.72H5.8l10.67 14.48Z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <nav class="pro-footer__col" aria-label="Shop links">
-      <h3>Shop</h3>
-      <a href="shop.html">All Products</a>
-      <a href="cart.html">Cart</a>
-      <a href="wishlist.html">Wishlist</a>
-      <a href="shop.html">New Arrivals</a>
+    <!-- Column 2 -->
+    <nav class="nite-footer__col nite-fade" style="--d:80ms" aria-label="Products">
+      <h3 class="nite-footer__title">Products</h3>
+      <ul class="nite-footer__links">
+        <li><a href="shop.html">Explore</a></li>
+        <li><a href="shop.html">Collections</a></li>
+        <li><a href="shop.html">New Arrivals</a></li>
+        <li><a href="shop.html">Best Sellers</a></li>
+        <li><a href="shop.html">Featured Products</a></li>
+      </ul>
     </nav>
 
-    <nav class="pro-footer__col" aria-label="Company links">
-      <h3>Company</h3>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-      <a href="index.html#why-choose-title">Why NItec</a>
-      <a href="index.html#customer-testimonials-title">Testimonials</a>
+    <!-- Column 3 -->
+    <nav class="nite-footer__col nite-fade" style="--d:160ms" aria-label="Support">
+      <h3 class="nite-footer__title">Support</h3>
+      <ul class="nite-footer__links">
+        <li><a href="contact.html">Help Center</a></li>
+        <li><a href="about.html">FAQs</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
 
-    <nav class="pro-footer__col" aria-label="Support links">
-      <h3>Support</h3>
-      <a href="index.html#faq-title">FAQs</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
-      <a href="cookies.html">Cookie Policy</a>
+    <!-- Column 4 -->
+    <nav class="nite-footer__col nite-fade" style="--d:240ms" aria-label="Company">
+      <h3 class="nite-footer__title">Company</h3>
+      <ul class="nite-footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+      </ul>
     </nav>
-
-    <div class="pro-footer__newsletter">
-      <h3>Stay in the loop</h3>
-      <p>Get product drops, offers, and updates straight to your inbox.</p>
-      <form class="pro-footer__form" onsubmit="return false;">
-        <input type="email" placeholder="Your email address" aria-label="Email address" required>
-        <button type="submit" aria-label="Subscribe">
-          <i data-lucide="arrow-right" aria-hidden="true"></i>
-        </button>
-      </form>
-    </div>
   </div>
 
-  <div class="pro-footer__divider" aria-hidden="true"></div>
+  <div class="nite-footer__divider" role="presentation"></div>
 
-  <div class="pro-footer__bottom">
-    <div class="footer-meta">
-      <span>© <span data-year>2026</span> Nitec. All rights reserved.</span>
-      <span>v1.0</span>
-      <span>Built with &hearts;</span>
-    </div>
-
-    <div class="pro-footer__payments" aria-label="Accepted payment methods">
-      <span>Visa</span>
-      <span>Mastercard</span>
-      <span>PayPal</span>
-      <span>Apple Pay</span>
-    </div>
-
-    <button class="footer-top" type="button" data-back-to-top aria-label="Back to top">
-      <i data-lucide="arrow-up" aria-hidden="true"></i>
-    </button>
+  <div class="nite-footer__bottom">
+    <p>&copy; 2026 Nite. Crafted with passion. All Rights Reserved.</p>
+    <ul class="nite-footer__legal">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Cookies</a></li>
+      <li><a href="#">Sitemap</a></li>
+    </ul>
   </div>
 </footer>
 
@@ -571,6 +587,7 @@
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/dayjs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/plugin/relativeTime.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script type="module" src="js/sidebar.js"></script>
 <script type="module" src="js/core/app.js"></script>
 

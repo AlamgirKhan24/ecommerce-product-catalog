@@ -19,6 +19,7 @@ import { initFeaturedProducts } from '../ui/featuredProducts.js';
 import { initAOS } from '../vendors/aos.js';
 import { initLazyLoad } from '../vendors/lazyside.js';
 import { initDayjs } from '../vendors/dayjs.js';
+import { initLucideIcons } from '../vendors/lucide.js';
 
 import { notifyLoadError } from '../modules/notifications.js';
 
@@ -85,3 +86,5 @@ async function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+initLucideIcons();

@@ -1,282 +1,257 @@
-/* Professional multi-column footer */
+/* ============================================================
+   Nite — premium site footer
+   Uses the site tokens: glass card, lime accent, 32px radii
+   ============================================================ */
 
 .neo-footer-strip {
+  --f-ink: #080b0d;
+  --f-muted: #6d747c;
+  --f-accent: #d9ff45;
+  --f-border: rgba(255, 255, 255, .64);
+  --f-ease: cubic-bezier(.22, 1, .36, 1);
+
   position: relative;
   isolation: isolate;
   margin-top: 1rem;
-  padding: clamp(1.4rem, 3vw, 2.4rem) clamp(1.2rem, 3vw, 2.2rem) clamp(1rem, 2vw, 1.5rem);
-  border: 1px solid rgba(255, 255, 255, .64);
+  padding: clamp(1.8rem, 4vw, 3.2rem) clamp(1.3rem, 3.5vw, 3rem) clamp(1.2rem, 2.4vw, 1.7rem);
+  border: 1px solid var(--f-border);
   border-radius: 32px;
+  color: var(--f-ink);
   background:
     radial-gradient(circle at 8% -16%, rgba(217, 255, 69, .28), transparent 20rem),
     radial-gradient(circle at 92% -12%, rgba(41, 207, 214, .18), transparent 20rem),
-    linear-gradient(145deg, rgba(255,255,255,.94), rgba(255,255,255,.6));
+    linear-gradient(145deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .6));
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.62),
+    inset 0 1px 0 rgba(255, 255, 255, .62),
     0 18px 46px rgba(25, 38, 44, .1);
   backdrop-filter: blur(22px);
   overflow: hidden;
 }
 
-.neo-footer-strip a {
-  color: inherit;
-  text-decoration: none;
-}
+.neo-footer-strip a { color: inherit; text-decoration: none; }
 
-/* Top grid: brand / shop / company / support / newsletter */
-.pro-footer__top {
+/* ---------- grid ---------- */
+.nite-footer__grid {
   display: grid;
-  grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr 1.3fr;
-  gap: clamp(1.2rem, 2.5vw, 2rem);
+  grid-template-columns: 1.7fr .9fr .9fr .9fr;
+  gap: clamp(1.6rem, 3vw, 3.4rem);
 }
 
-.pro-footer__brand .footer-logo {
+/* ---------- brand ---------- */
+.nite-logo {
   display: inline-flex;
   align-items: center;
-  gap: .75rem;
-  color: #080b0d;
-  font-size: 1.15rem;
-  font-weight: 900;
-  letter-spacing: -.045em;
+  gap: .7rem;
 }
 
-.footer-logo__mark {
+.nite-logo__mark {
   position: relative;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: .55rem;
-  background: #080b0d;
-  box-shadow: 0 12px 26px rgba(8, 11, 13, .14);
-}
-
-.footer-logo__mark::after {
-  content: '';
-  position: absolute;
-  inset: .5rem;
-  border-top: .26rem solid #fff;
-  border-left: .26rem solid #fff;
-  border-radius: .2rem 0 0 0;
-}
-
-.pro-footer__brand p {
-  max-width: 24rem;
-  margin: .85rem 0 1.1rem;
-  color: rgba(8, 11, 13, .66);
-  font-size: .88rem;
-  font-weight: 600;
-  line-height: 1.55;
-}
-
-.pro-footer__social {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-.pro-footer__social a {
-  width: 2.15rem;
-  height: 2.15rem;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, .72);
-  border-radius: 50%;
-  background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(255,255,255,.68));
-  color: #080b0d;
-  transition: transform 180ms cubic-bezier(.2, .8, .2, 1), background 180ms ease, box-shadow 180ms ease;
-}
-
-.pro-footer__social a svg {
-  width: .95rem;
-  height: .95rem;
-  stroke-width: 2.25;
-}
-
-.pro-footer__social a:hover {
-  background: rgba(217, 255, 69, .72);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(25,38,44,.12);
-}
-
-.pro-footer__col h3,
-.pro-footer__newsletter h3 {
-  margin: 0 0 .9rem;
-  font-size: .8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: #080b0d;
-}
-
-.pro-footer__col {
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
-}
-
-.pro-footer__col a {
-  font-size: .87rem;
-  font-weight: 600;
-  color: rgba(8, 11, 13, .66);
-  transition: color 160ms ease;
-  width: fit-content;
-}
-
-.pro-footer__col a:hover {
-  color: #080b0d;
-}
-
-.pro-footer__newsletter p {
-  margin: 0 0 .9rem;
-  font-size: .86rem;
-  font-weight: 600;
-  color: rgba(8, 11, 13, .66);
-  line-height: 1.5;
-}
-
-.pro-footer__form {
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  padding: .3rem .3rem .3rem .9rem;
-  border: 1px solid rgba(255, 255, 255, .68);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .5);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
-}
-
-.pro-footer__form input {
-  flex: 1;
-  min-width: 0;
-  border: 0;
-  background: transparent;
-  font-size: .84rem;
-  font-weight: 600;
-  color: #080b0d;
-  outline: none;
-}
-
-.pro-footer__form input::placeholder {
-  color: rgba(8, 11, 13, .45);
-}
-
-.pro-footer__form button {
-  flex-shrink: 0;
   width: 2.1rem;
   height: 2.1rem;
+  border-radius: .7rem;
+  background: var(--f-ink);
+  box-shadow: 0 10px 24px rgba(8, 11, 13, .3);
+  transition: transform 380ms var(--f-ease), box-shadow 380ms var(--f-ease);
+}
+.nite-logo__mark::after {
+  content: '';
+  position: absolute;
+  inset: .58rem;
+  border-top: .26rem solid #fff;
+  border-left: .26rem solid #fff;
+  border-radius: .22rem 0 0 0;
+}
+.nite-logo:hover .nite-logo__mark {
+  transform: rotate(-8deg) scale(1.06);
+  box-shadow: 0 16px 32px rgba(8, 11, 13, .24);
+}
+
+.nite-logo__text {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -.05em;
+}
+
+.nite-footer__desc {
+  max-width: 26rem;
+  margin: 1rem 0 1.4rem;
+  color: var(--f-muted);
+  font-size: .9rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* ---------- social ---------- */
+.nite-social {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nite-social a {
   display: inline-grid;
   place-items: center;
-  border: 0;
-  border-radius: 50%;
-  background: #d9ff45;
-  color: #080b0d;
-  cursor: pointer;
-  transition: transform 180ms ease;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: rgba(255, 255, 255, .55);
+  transition: color 380ms var(--f-ease), transform 380ms var(--f-ease);
 }
 
-.pro-footer__form button:hover {
-  transform: translateX(2px);
+.nite-social svg { width: 1.15rem; height: 1.15rem; }
+
+.nite-social a:hover,
+.nite-social a:focus-visible {
+  color: var(--f-accent);
+  transform: translateY(-3px);
+  outline: none;
+}
+/* ---------- link columns ---------- */
+.nite-footer__title {
+  margin: 0 0 1.1rem;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--f-ink);
 }
 
-.pro-footer__form button svg {
-  width: 1rem;
-  height: 1rem;
-  stroke-width: 2.4;
+.nite-footer__links {
+  display: grid;
+  gap: .72rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.pro-footer__divider {
+.nite-footer__links a {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, .68);
+  font-size: .9rem;
+  font-weight: 600;
+  transition: color 380ms var(--f-ease), transform 380ms var(--f-ease);
+}
+
+.nite-footer__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -.18rem;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--f-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms var(--f-ease);
+}
+
+.nite-footer__links a:hover,
+.nite-footer__links a:focus-visible {
+  color: var(--f-ink);
+  transform: translateX(3px);
+  outline: none;
+}
+.nite-footer__links a:hover::after,
+.nite-footer__links a:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- divider + bottom ---------- */
+.nite-footer__divider {
   height: 1px;
-  margin: clamp(1.2rem, 2.5vw, 1.8rem) 0 1rem;
-  background: linear-gradient(90deg, transparent, rgba(8, 11, 13, .14), transparent);
+  margin: clamp(1.8rem, 3.5vw, 2.8rem) 0 1.2rem;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(8, 11, 13, .14) 18%,
+    rgba(8, 11, 13, .14) 82%,
+    transparent);
 }
 
-.pro-footer__bottom {
+.nite-footer__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: .85rem;
   flex-wrap: wrap;
+  gap: .9rem 1.4rem;
 }
 
-.footer-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  flex-wrap: wrap;
-  color: rgba(8, 11, 13, .66);
+.nite-footer__bottom p {
+  margin: 0;
+  color: var(--f-muted);
   font-size: .82rem;
-  font-weight: 650;
+  font-weight: 600;
 }
 
-.footer-meta span:not(:last-child)::after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  margin-left: .5rem;
-  border-radius: 50%;
-  background: rgba(8, 11, 13, .28);
-  display: inline-block;
-}
-
-.pro-footer__payments {
+.nite-footer__legal {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  flex-wrap: wrap;
+  gap: .5rem 1.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.pro-footer__payments span {
-  padding: .35rem .7rem;
-  border: 1px solid rgba(255, 255, 255, .6);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, .55);
-  font-size: .72rem;
-  font-weight: 700;
-  color: rgba(8, 11, 13, .6);
+.nite-footer__legal a {
+  position: relative;
+  color: var(--f-muted);
+  font-size: .82rem;
+  font-weight: 600;
+  transition: color 220ms ease;
+}
+.nite-footer__legal a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -.16rem;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--f-ink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms var(--f-ease);
+}
+.nite-footer__legal a:hover { color: var(--f-ink); }
+.nite-footer__legal a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-.footer-top {
-  width: 2.1rem;
-  height: 2.1rem;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, .72);
-  border-radius: 50%;
-  background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(255,255,255,.68));
-  color: #080b0d;
-  cursor: pointer;
-  transition: transform 180ms cubic-bezier(.2, .8, .2, 1), background 180ms ease, box-shadow 180ms ease;
+/* ---------- fade-in ---------- */
+.nite-fade {
+  animation: niteFadeUp 620ms var(--f-ease) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes niteFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.footer-top svg {
-  width: .95rem;
-  height: .95rem;
-  stroke-width: 2.25;
-}
-
-.footer-top:hover {
-  background: rgba(217, 255, 69, .72);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(25,38,44,.12);
-}
-
+/* ---------- responsive ---------- */
 @media (max-width: 1080px) {
-  .pro-footer__top {
-    grid-template-columns: 1fr 1fr;
-  }
-  .pro-footer__brand {
-    grid-column: 1 / -1;
-  }
+  .nite-footer__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .nite-footer__brand { grid-column: 1 / -1; }
 }
 
-@media (max-width: 620px) {
-  .neo-footer-strip {
-    padding: 1.2rem;
-    border-radius: 24px;
-  }
-  .pro-footer__top {
-    grid-template-columns: 1fr;
-  }
-  .pro-footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@media (max-width: 720px) {
+  .neo-footer-strip { border-radius: 26px; }
+  .nite-footer__grid { grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .nite-footer__desc { max-width: none; }
+  .nite-footer__bottom { justify-content: flex-start; }
+}
+
+@media (max-width: 460px) {
+  .nite-footer__grid { grid-template-columns: 1fr; }
+  .nite-social a { width: 2.3rem; height: 2.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nite-fade { animation: none; }
+  .neo-footer-strip * { transition-duration: .01ms !important; }
 }
