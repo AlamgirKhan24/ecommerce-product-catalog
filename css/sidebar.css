@@ -7,12 +7,19 @@
 }
 
 body.has-app-sidebar {
+  padding-left: calc(var(--sidebar-current-width) + (var(--sidebar-gutter) * 2));
+  transition: padding-left var(--sidebar-speed) var(--sidebar-ease);
+    padding-left: 0;
+}
+
+body.has-app-sidebar {
   --sidebar-current-width: var(--sidebar-expanded);
 }
 
 body.has-app-sidebar.is-sidebar-collapsed {
   --sidebar-current-width: var(--sidebar-collapsed);
 }
+
 
 .app-sidebar {
   position: fixed;

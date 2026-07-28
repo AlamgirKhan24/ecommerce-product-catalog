@@ -1,4 +1,17 @@
+@use '../abstracts/variables' as *;
+
+// The header sits as a sibling before <main>, so it gets its own
+// width-matching container using the exact same formula as
+// .site-shell / .neo-shell (see base/_base.scss) — this keeps the
+// header perfectly aligned with the main content on every page.
+$header-width: min($container-max, calc(100% - ($page-padding * 2) - 3%));
+
 .site-header {
+  width: $header-width;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: calc((100% - #{$header-width}) / 2 + 20px);
+  margin-right: calc((100% - #{$header-width}) / 2 - 20px);
   position: relative;
-  z-index: 5;
+  z-index: 20;
 }

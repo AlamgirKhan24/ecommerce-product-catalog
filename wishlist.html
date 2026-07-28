@@ -17,47 +17,49 @@
   <link rel="stylesheet" href="css/footer.css">
 </head>
 <body class="home-page">
-  <main class="neo-shell">
-    <header class="neo-nav" aria-label="Primary navigation">
-      <a class="neo-brand" href="index.html" aria-label="Nitec home">
-        <span class="neo-brand__mark"></span>
-        <span>nitec.</span>
+
+  <header class="site-header">
+  <nav class="neo-nav" aria-label="Primary navigation">
+    <a class="neo-brand" href="index.html" aria-label="Nitec home">
+      <span class="neo-brand__mark"></span>
+      <span>nitec.</span>
+    </a>
+
+    <form class="neo-search" role="search">
+      <label class="visually-hidden" for="site-search">Search products</label>
+      <input id="site-search" type="search" placeholder="Search products..." data-search>
+      <button type="submit" aria-label="Search products">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4.2-4.2"></path>
+        </svg>
+      </button>
+    </form>
+
+    <div class="neo-actions">
+      <a class="neo-icon" href="cart.html" aria-label="Cart" data-cart-badge>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 8h14l-1.5 9h-11z"></path>
+          <path d="M7 8 6.2 5H3"></path>
+          <path d="M10 8a2 2 0 0 1 4 0"></path>
+          <circle cx="10" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+        </svg>
       </a>
+      <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Wishlist" data-wishlist-badge>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
+        </svg>
+      </a>
+      <a class="neo-user" href="about.html">
+        <span>Ryman Alex</span>
+        <span class="neo-user__avatar" aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+</header>
 
-      <form class="neo-search" role="search">
-        <label class="visually-hidden" for="wishlist-search">Search products</label>
-        <input id="wishlist-search" type="search" placeholder="Search products...">
-        <button type="submit" aria-label="Search products">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="m20 20-4.2-4.2"></path>
-          </svg>
-        </button>
-      </form>
-
-      <div class="neo-actions">
-        <a class="neo-icon" href="cart.html" aria-label="Cart">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8h14l-1.5 9h-11z"></path>
-            <path d="M7 8 6.2 5H3"></path>
-            <path d="M10 8a2 2 0 0 1 4 0"></path>
-            <circle cx="10" cy="20" r="1"></circle>
-            <circle cx="18" cy="20" r="1"></circle>
-          </svg>
-        </a>
-
-        <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Wishlist">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
-          </svg>
-        </a>
-
-        <a class="neo-user" href="about.html">
-          <span>Ryman Alex</span>
-          <span class="neo-user__avatar" aria-hidden="true"></span>
-        </a>
-      </div>
-    </header>
+  <main class="neo-shell">
 
     <section class="wishlist-hero">
       <div>
@@ -182,7 +184,7 @@
       </a>
       <div class="footer-contact__item">
         <i data-lucide="map-pin" aria-hidden="true"></i>
-        <address>San Francisco, CA · United States</address>
+        <address>San Francisco, CA ï¿½ United States</address>
       </div>
     </div>
 
@@ -199,7 +201,7 @@
 
   <div class="footer-bottom">
     <div class="footer-meta">
-      <span>© <span data-year>2026</span> Nitec. All rights reserved.</span>
+      <span>ï¿½ <span data-year>2026</span> Nitec. All rights reserved.</span>
       <span>v1.0</span>
       <span>Built with &hearts;</span>
     </div>
