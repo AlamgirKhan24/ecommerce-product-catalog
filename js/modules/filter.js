@@ -12,6 +12,7 @@ export function createDefaultFilterState() {
     categories: [],   // e.g. ['Headphones', 'Carry']
     brands: [],       // e.g. ['Nitec']
     colors: [],       // e.g. ['#1767d8']
+    badges: [],       // e.g. ['new', 'sale']
     priceRange: null, // e.g. [0, 200], null = no price filter applied
     minRating: 0,     // e.g. 4 -> only 4+ star products
     inStockOnly: false,
@@ -34,6 +35,10 @@ export function applyFilters(products, filters) {
       if (!hasMatchingColor) return false;
     }
 
+    if (filters.badges?.length && !filters.badges.includes(product.badge)) {
+      return false;
+    }
+
     if (filters.priceRange) {
       const [min, max] = filters.priceRange;
       if (product.price < min || product.price > max) return false;
@@ -51,7 +56,7 @@ export function applyFilters(products, filters) {
   });
 }
 
-/** Toggle a value in/out of a filter array field (categories, brands, colors) */
+/** Toggle a value in/out of a filter array field (categories, brands, colors, badges) */
 export function toggleFilterValue(filters, field, value) {
   const current = filters[field];
   const exists = current.includes(value);
@@ -68,6 +73,7 @@ export function countActiveFilters(filters) {
   count += filters.categories.length;
   count += filters.brands.length;
   count += filters.colors.length;
+  count += filters.badges?.length || 0;
   count += filters.priceRange ? 1 : 0;
   count += filters.minRating > 0 ? 1 : 0;
   count += filters.inStockOnly ? 1 : 0;

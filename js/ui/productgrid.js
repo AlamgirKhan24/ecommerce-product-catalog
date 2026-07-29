@@ -16,6 +16,22 @@ let filters = createDefaultFilterState();
 let sortKey = 'featured';
 let pagination = createDefaultPaginationState();
 
+export function getFilters() {
+  return filters;
+}
+
+export function setFilters(newFilters) {
+  filters = newFilters;
+  pagination.page = 1;
+  render();
+}
+
+export function resetFilters() {
+  filters = createDefaultFilterState();
+  pagination.page = 1;
+  render();
+}
+
 function getVisibleProducts() {
   const filtered = applyFilters(allProducts, filters);
   return sortProducts(filtered, sortKey);
@@ -45,14 +61,6 @@ function render() {
 export function initProductGrid(products) {
   allProducts = products;
   render();
-
-  // Category dropdown
-  document.querySelector('[data-category]')?.addEventListener('change', (e) => {
-    const value = e.target.value;
-    filters.categories = value === 'All' ? [] : [value];
-    pagination.page = 1;
-    render();
-  });
 
   // Sort dropdown (values now match SORT_OPTIONS: featured/low/high/rating)
   document.querySelector('[data-sort]')?.addEventListener('change', (e) => {

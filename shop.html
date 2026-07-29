@@ -85,22 +85,24 @@
     </section>
 
     <section class="shop-layout">
-      <aside class="shop-filter">
+      <button class="shop-filter-trigger" type="button" data-filter-trigger>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>
+        Filters
+        <span class="shop-filter-trigger__count" data-filter-count-badge hidden>0</span>
+      </button>
+
+      <div class="shop-filter-overlay" data-filter-overlay></div>
+
+      <aside class="shop-filter" data-filter-panel>
         <div class="shop-filter__head">
           <h2>Filters</h2>
-          <span>Refine catalog</span>
+          <div class="shop-filter__head-actions">
+            <button type="button" class="shop-filter__reset" data-filter-reset>Reset all</button>
+            <button type="button" class="shop-filter__close" data-filter-close aria-label="Close filters">✕</button>
+          </div>
         </div>
 
-        <label>
-          Category
-          <select data-category>
-            <option>All</option>
-            <option>Headphones</option>
-            <option>Accessories</option>
-            <option>Carry</option>
-            <option>Home Tech</option>
-          </select>
-        </label>
+        <div class="filter-chips" data-filter-chips hidden></div>
 
         <label>
           Sort by
@@ -112,6 +114,47 @@
           </select>
         </label>
 
+        <details class="filter-group" open>
+          <summary>Categories</summary>
+          <div class="filter-options" data-options-categories></div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Brands</summary>
+          <div class="filter-options" data-options-brands></div>
+        </details>
+
+        <details class="filter-group" open>
+          <summary>Price</summary>
+          <div class="filter-price">
+            <div data-price-slider></div>
+            <div class="filter-price__values">
+              <span data-price-min>$0</span>
+              <span data-price-max>$0</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Rating</summary>
+          <div class="filter-options">
+            <label class="filter-radio"><input type="radio" name="rating" value="4" data-rating> 4★ &amp; up</label>
+            <label class="filter-radio"><input type="radio" name="rating" value="3" data-rating> 3★ &amp; up</label>
+            <label class="filter-radio"><input type="radio" name="rating" value="0" data-rating checked> Any rating</label>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Availability</summary>
+          <label class="filter-check"><input type="checkbox" data-instock> In stock only</label>
+        </details>
+
+        <details class="filter-group">
+          <summary>Highlights</summary>
+          <label class="filter-check"><input type="checkbox" data-badge="new"> New Arrivals</label>
+          <label class="filter-check"><input type="checkbox" data-badge="sale"> On Sale</label>
+        </details>
+
         <div class="shop-filter__colors">
           <span>Colors</span>
           <div class="neo-swatches">
@@ -121,6 +164,10 @@
             <span style="--swatch:#20d658"></span>
           </div>
         </div>
+
+        <div class="shop-filter__actions">
+          <button type="button" class="btn btn--dark" data-filter-apply>Apply Filters</button>
+        </div>
       </aside>
 
       <div class="shop-content">
@@ -128,6 +175,7 @@
           <div>
             <h2>All Products</h2>
             <p>Modern products selected for premium everyday shopping.</p>
+            <p class="shop-results-summary" data-results-summary>Showing products…</p>
           </div>
           <a class="neo-section-link" href="cart.html">
             View cart

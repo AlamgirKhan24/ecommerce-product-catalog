@@ -12,6 +12,7 @@ import { initNavbar } from '../ui/navbar.js';
 import { initFooter } from '../ui/footer.js';
 import { initHero } from '../ui/hero.js';
 import { initProductGrid } from '../ui/productgrid.js';
+import { initFiltersUI } from '../ui/filtersUI.js';
 import { initWishlistPage } from '../ui/whishlistUI.js';
 import { initCartPage } from '../ui/carUI.js';
 import { initFeaturedProducts } from '../ui/featuredProducts.js';
@@ -66,8 +67,10 @@ async function init() {
   initCountdowns();
 
   // shop.html — live grid with filter/sort/search
+  // shop.html — live grid with filter/sort/search
   if (document.querySelector('[data-product-grid]')) {
     initProductGrid(products);
+    initFiltersUI(products);
   }
 
   // wishlist.html

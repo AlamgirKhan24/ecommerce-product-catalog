@@ -3485,6 +3485,256 @@ img.is-loaded {
   width: 24px;
   height: 24px;
 }
+.shop-filter-trigger {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 18px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #080b0d;
+  font-weight: 800;
+  box-shadow: 0 14px 32px rgba(25, 38, 44, 0.08);
+}
+
+.shop-filter-trigger svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.shop-filter-trigger__count {
+  min-width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #d9ff45;
+  color: #080b0d;
+  font-size: 0.78rem;
+}
+
+.shop-filter-overlay {
+  display: none;
+}
+
+.shop-filter__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.shop-filter__head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shop-filter__reset {
+  color: #1767d8;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.shop-filter__close {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(8, 11, 13, 0.06);
+  font-size: 1rem;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px 7px 14px;
+  border-radius: 999px;
+  background: rgba(8, 11, 13, 0.06);
+  color: #080b0d;
+  font-size: 0.82rem;
+  font-weight: 750;
+  animation: chip-in 180ms ease;
+}
+
+.filter-chip button {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(8, 11, 13, 0.12);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+@keyframes chip-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.filter-group {
+  padding: 16px 0;
+  border-top: 1px solid rgba(8, 11, 13, 0.08);
+}
+
+.filter-group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 800;
+  color: #080b0d;
+  list-style: none;
+}
+
+.filter-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-group summary::after {
+  content: '+';
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(8, 11, 13, 0.06);
+  font-size: 1rem;
+  transition: transform 200ms ease;
+}
+
+.filter-group[open] summary::after {
+  content: '–';
+}
+
+.filter-options {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.filter-check,
+.filter-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(8, 11, 13, 0.78);
+  font-weight: 650;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.filter-check input,
+.filter-radio input {
+  width: 18px;
+  height: 18px;
+  accent-color: #020405;
+  cursor: pointer;
+}
+
+.filter-price {
+  margin-top: 18px;
+  padding: 0 4px;
+}
+
+.filter-price [data-price-slider] {
+  margin-bottom: 20px;
+}
+
+.filter-price__values {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.shop-filter__actions {
+  display: none;
+  margin-top: 20px;
+}
+
+.shop-results-summary {
+  margin-top: 4px !important;
+  color: #6d747c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+@media (max-width: 1180px) {
+  .shop-filter-trigger {
+    display: inline-flex;
+  }
+
+  .shop-filter {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    width: min(360px, 88vw);
+    height: 100vh;
+    overflow-y: auto;
+    border-radius: 0;
+    transform: translateX(100%);
+    transition: transform 320ms cubic-bezier(.22, 1, .36, 1);
+    padding: 24px;
+  }
+
+  .shop-filter.is-open {
+    transform: translateX(0);
+  }
+
+  .shop-filter__close {
+    display: grid;
+  }
+
+  .shop-filter__actions {
+    display: block;
+  }
+
+  .shop-filter-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1190;
+    background: rgba(8, 11, 13, 0.44);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+
+  .shop-filter-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.is-filter-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-filter {
+    width: 100vw;
+  }
+}
 
 .shop-content {
   padding: 24px;
