@@ -4,6 +4,7 @@ import { DATA_PATHS } from './constants.js';
 import { initTheme } from '../modules/theme.js';
 import { initSearchIndex } from '../modules/search.js';
 import { getCurrentProduct, getRelatedProducts, renderProductDetail } from '../modules/product.js';
+import { initProductTabs } from '../ui/productTabs.js';
 import { initStatistics } from '../modules/statistics.js';
 import { initCountdowns } from '../modules/countdown.js';
 import { initGallery } from '../modules/gallery.js';
@@ -13,7 +14,8 @@ import { initFooter } from '../ui/footer.js';
 import { initHero } from '../ui/hero.js';
 import { initProductGrid } from '../ui/productgrid.js';
 import { initFiltersUI } from '../ui/filtersUI.js';
-import { initWishlistPage } from '../ui/whishlistUI.js';
+import { getWishlistItems, removeFromWishlist, clearWishlist } from '../modules/wishlist.js';
+import { addToCart } from '../modules/cart.js';
 import { initCartPage } from '../ui/carUI.js';
 import { initFeaturedProducts } from '../ui/featuredProducts.js';
 
@@ -80,10 +82,12 @@ async function init() {
   initCartPage();
 
   // product.html — detail view + gallery + related products
+  // product.html — detail view + gallery + related products
   if (document.querySelector('.product-detail')) {
     const current = getCurrentProduct(products);
     const related = getRelatedProducts(products, current);
     renderProductDetail(current, related);
+    initProductTabs(current);
     if (current?.images?.length) initGallery(current.images);
   }
 }

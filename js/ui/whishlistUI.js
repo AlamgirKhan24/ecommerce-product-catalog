@@ -32,6 +32,16 @@ function renderWishlistCard(item) {
     removeFromWishlist(item.id, item.name);
   });
 
+  const moveToCartBtn = createEl(
+    'button',
+    { type: 'button', class: 'wishlist-cart-btn' },
+    'Move to cart'
+  );
+  moveToCartBtn.addEventListener('click', () => {
+    addToCart({ id: item.id, name: item.name, price: item.price, images: [item.image] });
+    removeFromWishlist(item.id, item.name);
+  });
+
   return createEl('article', { class: 'neo-product-card' }, [
     removeBtn,
     createEl('a', { class: 'neo-product-card__media', href: `product.html?id=${item.id}` }, [
@@ -42,7 +52,7 @@ function renderWishlistCard(item) {
         createEl('strong', {}, formatPrice(item.price)),
       ]),
       createEl('h3', {}, item.name),
-      createEl('a', { class: 'wishlist-cart-btn', href: 'cart.html' }, 'Move to cart'),
+      moveToCartBtn,
     ]),
   ]);
 }
@@ -80,9 +90,14 @@ function render() {
 }
 
 /** Bootstrap — call once from app.js, only does work if wishlist.html is the current page */
+/** Bootstrap — call once from app.js, only does work if wishlist.html is the current page */
 export function initWishlistPage() {
   if (!document.querySelector('.wishlist-panel')) return;
 
   render();
   document.addEventListener(EVENTS.WISHLIST_UPDATED, render);
+
+  document.querySelector('[data-clear-wishlist]')?.addEventListener('click', () => {
+    clearWishlist();
+  });
 }
