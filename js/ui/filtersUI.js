@@ -31,6 +31,27 @@ function renderCheckboxGroup(container, values, field) {
   });
 }
 
+function renderColorGroup(container, values) {
+  if (!container) return;
+  container.innerHTML = '';
+
+  values.forEach((value) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'filter-swatch';
+    button.style.setProperty('--swatch', value);
+    button.dataset.color = value;
+    button.setAttribute('aria-label', `Filter by color ${value}`);
+
+    button.addEventListener('click', () => {
+      setFilters(toggleFilterValue(getFilters(), 'colors', value));
+      syncUI();
+    });
+
+    container.appendChild(button);
+  });
+}
+
 function renderChips() {
   const chipsWrap = document.querySelector('[data-filter-chips]');
   if (!chipsWrap) return;
@@ -40,6 +61,7 @@ function renderChips() {
 
   filters.categories.forEach((v) => chips.push({ field: 'categories', value: v, label: v }));
   filters.brands.forEach((v) => chips.push({ field: 'brands', value: v, label: v }));
+  filters.colors.forEach((v) => chips.push({ field: 'colors', value: v, label: `Color ${v}` }));
   (filters.badges || []).forEach((v) => chips.push({ field: 'badges', value: v, label: BADGE_LABELS[v] || v }));
   if (filters.minRating > 0) chips.push({ field: 'minRating', value: 0, label: `${filters.minRating}★ & up` });
   if (filters.inStockOnly) chips.push({ field: 'inStockOnly', value: false, label: 'In stock only' });
@@ -59,7 +81,7 @@ function renderChips() {
     el.querySelector('button').addEventListener('click', () => {
       const current = getFilters();
       const next =
-        chip.field === 'categories' || chip.field === 'brands' || chip.field === 'badges'
+        chip.field === 'categories' || chip.field === 'brands' || chip.field === 'colors' || chip.field === 'badges'
           ? toggleFilterValue(current, chip.field, chip.value)
           : { ...current, [chip.field]: chip.field === 'priceRange' ? null : chip.value };
 
@@ -98,6 +120,12 @@ function syncCheckboxStates() {
 
   document.querySelectorAll('[data-options-brands] input').forEach((input) => {
     input.checked = filters.brands.includes(input.value);
+  });
+
+  document.querySelectorAll('[data-options-colors] [data-color]').forEach((button) => {
+    const active = filters.colors.includes(button.dataset.color);
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-pressed', String(active));
   });
 
   document.querySelectorAll('[data-badge]').forEach((input) => {
@@ -217,6 +245,7 @@ export function initFiltersUI(productList) {
   const options = getFilterOptions(products);
   renderCheckboxGroup(document.querySelector('[data-options-categories]'), options.categories, 'categories');
   renderCheckboxGroup(document.querySelector('[data-options-brands]'), options.brands, 'brands');
+  renderColorGroup(document.querySelector('[data-options-colors]'), options.colors);
 
   setupPriceSlider();
   setupRating();
