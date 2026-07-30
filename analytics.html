@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics | Nitec Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/analytics.css">
+</head>
+<body class="analytics-page">
+
+  <header class="site-header">
+    <nav class="neo-nav" aria-label="Primary navigation">
+      <a class="neo-brand" href="index.html" aria-label="Nitec home">
+        <span class="neo-brand__mark"></span>
+        <span>nitec.</span>
+      </a>
+
+      <form class="neo-search" role="search">
+        <label class="visually-hidden" for="site-search">Search products</label>
+        <input id="site-search" type="search" placeholder="Search products..." data-search>
+        <button type="submit" aria-label="Search products">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4.2-4.2"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="neo-actions">
+        <a class="neo-icon" href="cart.html" aria-label="Cart" data-cart-badge>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 8h14l-1.5 9h-11z"></path>
+            <path d="M7 8 6.2 5H3"></path>
+            <path d="M10 8a2 2 0 0 1 4 0"></path>
+            <circle cx="10" cy="20" r="1"></circle>
+            <circle cx="18" cy="20" r="1"></circle>
+          </svg>
+        </a>
+        <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Wishlist" data-wishlist-badge>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
+          </svg>
+        </a>
+        <a class="neo-user" href="about.html">
+          <span>Ryman Alex</span>
+          <span class="neo-user__avatar" aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="neo-shell analytics-shell">
+
+    <!-- ===== Page Header ===== -->
+    <section class="analytics-hero">
+      <div>
+        <span class="neo-kicker">Store Overview</span>
+        <h1>Analytics Dashboard.</h1>
+        <p>Track revenue, orders, traffic and product performance across your entire catalog in real time.</p>
+      </div>
+
+      <div class="analytics-hero__actions">
+        <div class="analytics-range" data-range-select>
+          <button type="button" class="analytics-range__btn" data-range="7d">7D</button>
+          <button type="button" class="analytics-range__btn is-active" data-range="30d">30D</button>
+          <button type="button" class="analytics-range__btn" data-range="90d">90D</button>
+          <button type="button" class="analytics-range__btn" data-range="12m">12M</button>
+        </div>
+        <button type="button" class="analytics-export-btn" data-export-report>
+          <i data-lucide="download" aria-hidden="true"></i>
+          <span>Export report</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== KPI Cards ===== -->
+    <section class="analytics-kpis" aria-label="Key metrics">
+      <article class="analytics-kpi-card">
+        <div class="analytics-kpi-card__icon analytics-kpi-card__icon--revenue">
+          <i data-lucide="banknote" aria-hidden="true"></i>
+        </div>
+        <div class="analytics-kpi-card__body">
+          <span class="analytics-kpi-card__label">Total Revenue</span>
+          <strong class="analytics-kpi-card__value" data-countup data-count-to="128430">$0</strong>
+          <span class="analytics-kpi-card__trend is-up">
+            <i data-lucide="trending-up" aria-hidden="true"></i>
+            12.4% vs last period
+          </span>
+        </div>
+      </article>
+
+      <article class="analytics-kpi-card">
+        <div class="analytics-kpi-card__icon analytics-kpi-card__icon--orders">
+          <i data-lucide="shopping-cart" aria-hidden="true"></i>
+        </div>
+        <div class="analytics-kpi-card__body">
+          <span class="analytics-kpi-card__label">Total Orders</span>
+          <strong class="analytics-kpi-card__value" data-countup data-count-to="3218">0</strong>
+          <span class="analytics-kpi-card__trend is-up">
+            <i data-lucide="trending-up" aria-hidden="true"></i>
+            8.1% vs last period
+          </span>
+        </div>
+      </article>
+
+      <article class="analytics-kpi-card">
+        <div class="analytics-kpi-card__icon analytics-kpi-card__icon--customers">
+          <i data-lucide="users" aria-hidden="true"></i>
+        </div>
+        <div class="analytics-kpi-card__body">
+          <span class="analytics-kpi-card__label">New Customers</span>
+          <strong class="analytics-kpi-card__value" data-countup data-count-to="842">0</strong>
+          <span class="analytics-kpi-card__trend is-down">
+            <i data-lucide="trending-down" aria-hidden="true"></i>
+            2.3% vs last period
+          </span>
+        </div>
+      </article>
+
+      <article class="analytics-kpi-card">
+        <div class="analytics-kpi-card__icon analytics-kpi-card__icon--conversion">
+          <i data-lucide="target" aria-hidden="true"></i>
+        </div>
+        <div class="analytics-kpi-card__body">
+          <span class="analytics-kpi-card__label">Conversion Rate</span>
+          <strong class="analytics-kpi-card__value" data-countup data-count-to="4" data-suffix="%">0%</strong>
+          <span class="analytics-kpi-card__trend is-up">
+            <i data-lucide="trending-up" aria-hidden="true"></i>
+            0.6% vs last period
+          </span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Charts Row ===== -->
+    <section class="analytics-charts">
+      <article class="card analytics-panel analytics-panel--revenue">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Performance</span>
+            <h2>Revenue vs Orders</h2>
+          </div>
+          <div class="analytics-legend">
+            <span class="analytics-legend__item"><i class="analytics-legend__dot analytics-legend__dot--revenue"></i>Revenue</span>
+            <span class="analytics-legend__item"><i class="analytics-legend__dot analytics-legend__dot--orders"></i>Orders</span>
+          </div>
+        </div>
+        <div class="analytics-chart-wrap">
+          <canvas id="revenueChart" height="280" aria-label="Revenue and orders trend chart" role="img"></canvas>
+        </div>
+      </article>
+
+      <article class="card analytics-panel analytics-panel--categories">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Breakdown</span>
+            <h2>Sales by Category</h2>
+          </div>
+        </div>
+        <div class="analytics-chart-wrap analytics-chart-wrap--donut">
+          <canvas id="categoryChart" height="280" aria-label="Sales share by category" role="img"></canvas>
+        </div>
+        <ul class="analytics-category-list" data-category-legend></ul>
+      </article>
+    </section>
+
+    <!-- ===== Secondary Charts Row ===== -->
+    <section class="analytics-charts analytics-charts--secondary">
+      <article class="card analytics-panel analytics-panel--traffic">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Acquisition</span>
+            <h2>Traffic Sources</h2>
+          </div>
+        </div>
+        <div class="analytics-chart-wrap">
+          <canvas id="trafficChart" height="220" aria-label="Traffic sources chart" role="img"></canvas>
+        </div>
+      </article>
+
+      <article class="card analytics-panel analytics-panel--funnel">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Journey</span>
+            <h2>Conversion Funnel</h2>
+          </div>
+        </div>
+        <ul class="analytics-funnel">
+          <li class="analytics-funnel__step" style="--fill: 100%">
+            <span>Visitors</span>
+            <strong>18,420</strong>
+          </li>
+          <li class="analytics-funnel__step" style="--fill: 62%">
+            <span>Product Views</span>
+            <strong>11,412</strong>
+          </li>
+          <li class="analytics-funnel__step" style="--fill: 34%">
+            <span>Added to Cart</span>
+            <strong>6,268</strong>
+          </li>
+          <li class="analytics-funnel__step" style="--fill: 17%">
+            <span>Checkout Started</span>
+            <strong>3,140</strong>
+          </li>
+          <li class="analytics-funnel__step" style="--fill: 11%">
+            <span>Orders Completed</span>
+            <strong>2,024</strong>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card analytics-panel analytics-panel--devices">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Audience</span>
+            <h2>Sessions by Device</h2>
+          </div>
+        </div>
+        <div class="analytics-chart-wrap analytics-chart-wrap--donut">
+          <canvas id="deviceChart" height="220" aria-label="Sessions by device chart" role="img"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Top Products + Recent Orders ===== -->
+    <section class="analytics-tables">
+      <article class="card analytics-panel analytics-panel--top-products">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Best Sellers</span>
+            <h2>Top Products</h2>
+          </div>
+          <a class="neo-section-link" href="shop.html">
+            View catalog
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7"></path>
+              <path d="M8 7h9v9"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="analytics-table-wrap">
+          <table class="analytics-table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Category</th>
+                <th scope="col">Units Sold</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Trend</th>
+              </tr>
+            </thead>
+            <tbody data-top-products>
+              <tr>
+                <td>
+                  <div class="analytics-table__product">
+                    <img src="assets/images/products/product-01.webp" alt="Sequoia Bass Headphone">
+                    <span>Sequoia Bass Headphone</span>
+                  </div>
+                </td>
+                <td>Headphones</td>
+                <td>412</td>
+                <td>$53,148.00</td>
+                <td><span class="analytics-sparkline is-up">▲ 14%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="analytics-table__product">
+                    <img src="assets/images/products/product-02.webp" alt="Modular Day Backpack">
+                    <span>Modular Day Backpack</span>
+                  </div>
+                </td>
+                <td>Carry</td>
+                <td>356</td>
+                <td>$42,008.00</td>
+                <td><span class="analytics-sparkline is-up">▲ 9%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="analytics-table__product">
+                    <img src="assets/images/products/product-03.webp" alt="Ceramic Field Watch">
+                    <span>Ceramic Field Watch</span>
+                  </div>
+                </td>
+                <td>Accessories</td>
+                <td>298</td>
+                <td>$45,892.00</td>
+                <td><span class="analytics-sparkline is-down">▼ 3%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="analytics-table__product">
+                    <img src="assets/images/products/product-04.webp" alt="Wireless Table Lamp">
+                    <span>Wireless Table Lamp</span>
+                  </div>
+                </td>
+                <td>Home Tech</td>
+                <td>221</td>
+                <td>$19,006.00</td>
+                <td><span class="analytics-sparkline is-up">▲ 6%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="analytics-table__product">
+                    <img src="assets/images/products/product-05.webp" alt="Trail Runner Sneaker">
+                    <span>Trail Runner Sneaker</span>
+                  </div>
+                </td>
+                <td>Footwear</td>
+                <td>184</td>
+                <td>$16,560.00</td>
+                <td><span class="analytics-sparkline is-down">▼ 1%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card analytics-panel analytics-panel--orders">
+        <div class="neo-section-head">
+          <div>
+            <span class="neo-kicker">Live Feed</span>
+            <h2>Recent Orders</h2>
+          </div>
+        </div>
+
+        <ul class="analytics-order-list" data-recent-orders>
+          <li class="analytics-order-item">
+            <span class="analytics-order-item__id">#NT-10482</span>
+            <span class="analytics-order-item__customer">Amelia Ross</span>
+            <span class="analytics-order-item__amount">$248.00</span>
+            <span class="analytics-order-item__status is-paid">Paid</span>
+          </li>
+          <li class="analytics-order-item">
+            <span class="analytics-order-item__id">#NT-10481</span>
+            <span class="analytics-order-item__customer">Daniel Kim</span>
+            <span class="analytics-order-item__amount">$96.00</span>
+            <span class="analytics-order-item__status is-pending">Pending</span>
+          </li>
+          <li class="analytics-order-item">
+            <span class="analytics-order-item__id">#NT-10480</span>
+            <span class="analytics-order-item__customer">Priya Nair</span>
+            <span class="analytics-order-item__amount">$412.50</span>
+            <span class="analytics-order-item__status is-paid">Paid</span>
+          </li>
+          <li class="analytics-order-item">
+            <span class="analytics-order-item__id">#NT-10479</span>
+            <span class="analytics-order-item__customer">Marcus Lee</span>
+            <span class="analytics-order-item__amount">$74.00</span>
+            <span class="analytics-order-item__status is-refunded">Refunded</span>
+          </li>
+          <li class="analytics-order-item">
+            <span class="analytics-order-item__id">#NT-10478</span>
+            <span class="analytics-order-item__customer">Sofia Alvarez</span>
+            <span class="analytics-order-item__amount">$189.00</span>
+            <span class="analytics-order-item__status is-paid">Paid</span>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="neo-footer-strip">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="footer-logo" href="index.html" aria-label="Nitec home">
+            <span class="footer-logo__mark" aria-hidden="true"></span>
+            <span>nitec.</span>
+          </a>
+          <p>Premium ecommerce catalog for modern tech essentials. Designed for a clean, confident, and elevated shopping experience.</p>
+        </div>
+
+        <div class="footer-contact" aria-label="Contact information">
+          <a class="footer-contact__item" href="mailto:support@nitec.store">
+            <i data-lucide="mail" aria-hidden="true"></i>
+            <span>support@nitec.store</span>
+          </a>
+          <a class="footer-contact__item" href="tel:+1234567890">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            <span>+1 (234) 567-890</span>
+          </a>
+          <div class="footer-contact__item">
+            <i data-lucide="map-pin" aria-hidden="true"></i>
+            <address>San Francisco, CA — United States</address>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Social media">
+          <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+          <a href="https://x.com" aria-label="X" target="_blank" rel="noreferrer"><i data-lucide="twitter" aria-hidden="true"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer"><i data-lucide="instagram" aria-hidden="true"></i></a>
+          <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noreferrer"><i data-lucide="facebook" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-divider" aria-hidden="true"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-meta">
+          <span>© <span data-year>2026</span> Nitec. All rights reserved.</span>
+          <span>v1.0</span>
+          <span>Built with &hearts;</span>
+        </div>
+
+        <div class="footer-legal" aria-label="Legal links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="cookies.html">Cookie Policy</a>
+          <button class="footer-top" type="button" data-back-to-top aria-label="Back to top">
+            <i data-lucide="arrow-up" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/plugin/relativeTime.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+  <script type="module" src="js/sidebar.js"></script>
+  <script type="module" src="js/core/app.js"></script>
+
+  <script>
+    // ---- Analytics page rendering (self-contained; wire to js/modules/analytics.js later) ----
+    document.addEventListener('DOMContentLoaded', () => {
+      const cssVar = (name, fallback) =>
+        getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+
+      const palette = {
+        primary: cssVar('--accent', '#d9ff45'),
+        primaryLine: '#a6c400',
+        secondary: cssVar('--accent-2', '#29cfd6'),
+        muted: 'rgba(25, 38, 44, .12)',
+        text: '#19262c',
+      };
+
+      // CountUp KPI values
+      if (window.countUp) {
+        document.querySelectorAll('[data-countup]').forEach((el) => {
+          const target = Number(el.dataset.countTo || 0);
+          const suffix = el.dataset.suffix || '';
+          const prefix = el.textContent.trim().startsWith('$') ? '$' : '';
+          const counter = new window.countUp.CountUp(el, target, {
+            duration: 1.6,
+            separator: ',',
+            prefix,
+            suffix,
+          });
+          if (!counter.error) counter.start();
+          else el.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
+        });
+      }
+
+      if (!window.Chart) return;
+
+      const labels30d = Array.from({ length: 14 }, (_, i) => `Day ${i + 1}`);
+      const revenueData = [3200, 4100, 3800, 5200, 4700, 6100, 5800, 6600, 7200, 6800, 7600, 8100, 7900, 8600];
+      const ordersData = [82, 96, 88, 121, 110, 138, 129, 145, 158, 150, 166, 172, 168, 181];
+
+      new Chart(document.getElementById('revenueChart'), {
+        type: 'line',
+        data: {
+          labels: labels30d,
+          datasets: [
+            {
+              label: 'Revenue',
+              data: revenueData,
+              borderColor: palette.primaryLine,
+              backgroundColor: 'rgba(217,255,69,.18)',
+              tension: 0.4,
+              fill: true,
+              pointRadius: 0,
+              borderWidth: 2.5,
+              yAxisID: 'y',
+            },
+            {
+              label: 'Orders',
+              data: ordersData,
+              borderColor: palette.secondary,
+              backgroundColor: 'transparent',
+              tension: 0.4,
+              fill: false,
+              pointRadius: 0,
+              borderWidth: 2,
+              borderDash: [4, 4],
+              yAxisID: 'y1',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { position: 'left', grid: { color: palette.muted }, ticks: { callback: (v) => `$${v / 1000}k` } },
+            y1: { position: 'right', grid: { display: false } },
+          },
+        },
+      });
+
+      const categoryLabels = ['Headphones', 'Accessories', 'Carry', 'Home Tech', 'Footwear'];
+      const categoryValues = [32, 24, 19, 15, 10];
+      const categoryColors = ['#d9ff45', '#29cfd6', '#ff8a5c', '#7c8cff', '#ff6ea1'];
+
+      new Chart(document.getElementById('categoryChart'), {
+        type: 'doughnut',
+        data: {
+          labels: categoryLabels,
+          datasets: [{ data: categoryValues, backgroundColor: categoryColors, borderWidth: 0 }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      const legendList = document.querySelector('[data-category-legend]');
+      if (legendList) {
+        legendList.innerHTML = categoryLabels
+          .map((label, i) => `
+            <li>
+              <span class="analytics-category-list__dot" style="background:${categoryColors[i]}"></span>
+              <span>${label}</span>
+              <strong>${categoryValues[i]}%</strong>
+            </li>
+          `)
+          .join('');
+      }
+
+      new Chart(document.getElementById('trafficChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Organic', 'Direct', 'Social', 'Email', 'Referral', 'Paid'],
+          datasets: [{
+            data: [4820, 3210, 2670, 1540, 980, 1720],
+            backgroundColor: palette.primaryLine,
+            borderRadius: 8,
+            maxBarThickness: 28,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { grid: { color: palette.muted } },
+          },
+        },
+      });
+
+      new Chart(document.getElementById('deviceChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Mobile', 'Desktop', 'Tablet'],
+          datasets: [{
+            data: [58, 34, 8],
+            backgroundColor: ['#d9ff45', '#19262c', '#29cfd6'],
+            borderWidth: 0,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          plugins: { legend: { position: 'bottom' } },
+        },
+      });
+    });
+  </script>
+
+</body>
+</html>
