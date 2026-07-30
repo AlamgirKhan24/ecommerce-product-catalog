@@ -18,6 +18,7 @@ import { getWishlistItems, removeFromWishlist, clearWishlist } from '../modules/
 import { addToCart } from '../modules/cart.js';
 import { initCartPage } from '../ui/carUI.js';
 import { initFeaturedProducts } from '../ui/featuredProducts.js';
+import { initProfilePage } from '../ui/profileUI.js';
 
 import { initAOS } from '../vendors/aos.js';
 import { initLazyLoad } from '../vendors/lazyside.js';
@@ -80,6 +81,9 @@ async function init() {
 
   // cart.html
   initCartPage();
+
+  // profile.html
+  initProfilePage();
 
   // product.html — detail view + gallery + related products
   // product.html — detail view + gallery + related products

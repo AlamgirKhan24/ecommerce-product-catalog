@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Profile | Nitec Store</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body class="home-page">
+
+  <header class="site-header">
+  <nav class="neo-nav" aria-label="Primary navigation">
+    <a class="neo-brand" href="index.html" aria-label="Nitec home">
+      <span class="neo-brand__mark"></span>
+      <span>nitec.</span>
+    </a>
+
+    <form class="neo-search" role="search">
+      <label class="visually-hidden" for="site-search">Search products</label>
+      <input id="site-search" type="search" placeholder="Search products..." data-search>
+      <button type="submit" aria-label="Search products">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4.2-4.2"></path>
+        </svg>
+      </button>
+    </form>
+
+    <div class="neo-actions">
+      <a class="neo-icon" href="cart.html" aria-label="Cart" data-cart-badge>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 8h14l-1.5 9h-11z"></path>
+          <path d="M7 8 6.2 5H3"></path>
+          <path d="M10 8a2 2 0 0 1 4 0"></path>
+          <circle cx="10" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+        </svg>
+      </a>
+      <a class="neo-icon neo-icon--heart" href="wishlist.html" aria-label="Wishlist" data-wishlist-badge>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19.5 5.4c-1.7-1.7-4.4-1.7-6.1 0L12 6.8l-1.4-1.4c-1.7-1.7-4.4-1.7-6.1 0s-1.7 4.4 0 6.1L12 19l7.5-7.5c1.7-1.7 1.7-4.4 0-6.1Z"></path>
+        </svg>
+      </a>
+      <a class="neo-user" href="profile.html" aria-current="page">
+        <span>Ryman Alex</span>
+        <span class="neo-user__avatar" aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+  <main class="neo-shell" data-profile-page>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Profile</span>
+    </nav>
+
+    <!-- ===== Profile hero ===== -->
+    <section class="profile-hero">
+      <div class="profile-hero__avatar">
+        RA
+        <span aria-hidden="true"></span>
+      </div>
+
+      <div class="profile-hero__info">
+        <h1>Ryman Alex</h1>
+        <p>ryman.alex@example.com</p>
+        <div class="profile-hero__meta">
+          <span>Member since Jan 2026</span>
+          <span>Free shipping unlocked</span>
+        </div>
+      </div>
+
+      <div class="profile-hero__actions">
+        <button class="btn btn--dark" type="button" data-goto-tab="settings">Edit Profile</button>
+        <a class="btn btn--accent" href="shop.html">Continue Shopping</a>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="profile-stats">
+      <div class="profile-stat-card">
+        <strong data-stat="orders">3</strong>
+        <span>Total Orders</span>
+      </div>
+      <div class="profile-stat-card">
+        <strong data-stat="wishlist">0</strong>
+        <span>Wishlist Items</span>
+      </div>
+      <div class="profile-stat-card">
+        <strong data-stat="cart">0</strong>
+        <span>Items In Cart</span>
+      </div>
+      <div class="profile-stat-card">
+        <strong data-stat="reviews">2</strong>
+        <span>Reviews Written</span>
+      </div>
+    </section>
+
+    <!-- ===== Tabs ===== -->
+    <div class="profile-tabs" role="tablist" aria-label="Profile sections">
+      <button class="profile-tab is-active" type="button" data-profile-tab="overview" role="tab" aria-selected="true">Overview</button>
+      <button class="profile-tab" type="button" data-profile-tab="orders" role="tab" aria-selected="false">Orders</button>
+      <button class="profile-tab" type="button" data-profile-tab="wishlist" role="tab" aria-selected="false">Wishlist</button>
+      <button class="profile-tab" type="button" data-profile-tab="settings" role="tab" aria-selected="false">Settings</button>
+    </div>
+
+    <!-- ===== Overview panel ===== -->
+    <section class="profile-panel is-active" data-profile-panel="overview">
+      <div class="profile-card">
+        <h2>Personal Information</h2>
+        <p>Your basic account details.</p>
+
+        <div class="profile-form-grid">
+          <div class="form-field">
+            <label for="fullName">Full Name</label>
+            <input class="form-input" id="fullName" type="text" value="Ryman Alex">
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input class="form-input" id="email" type="email" value="ryman.alex@example.com">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input class="form-input" id="phone" type="tel" value="+1 (234) 567-890">
+          </div>
+          <div class="form-field">
+            <label for="address">Shipping Address</label>
+            <input class="form-input" id="address" type="text" value="San Francisco, CA, United States">
+          </div>
+        </div>
+
+        <div class="profile-form-actions">
+          <button class="btn btn--dark" type="button">Save Changes</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Orders panel ===== -->
+    <section class="profile-panel" data-profile-panel="orders">
+      <div class="profile-card">
+        <h2>Order History</h2>
+        <p>A record of your recent purchases.</p>
+
+        <div class="profile-order">
+          <div class="profile-order__icon">
+            <i data-lucide="package"></i>
+          </div>
+          <div>
+            <span class="profile-order__id">#NT-10482</span>
+            <span class="profile-order__date">Placed on Jul 12, 2026 &middot; 2 items</span>
+          </div>
+          <span class="profile-order__amount">$248.00</span>
+          <span class="profile-order__status is-delivered">Delivered</span>
+        </div>
+
+        <div class="profile-order">
+          <div class="profile-order__icon">
+            <i data-lucide="package"></i>
+          </div>
+          <div>
+            <span class="profile-order__id">#NT-10465</span>
+            <span class="profile-order__date">Placed on Jun 28, 2026 &middot; 1 item</span>
+          </div>
+          <span class="profile-order__amount">$96.00</span>
+          <span class="profile-order__status is-transit">In Transit</span>
+        </div>
+
+        <div class="profile-order">
+          <div class="profile-order__icon">
+            <i data-lucide="package"></i>
+          </div>
+          <div>
+            <span class="profile-order__id">#NT-10412</span>
+            <span class="profile-order__date">Placed on Jun 03, 2026 &middot; 3 items</span>
+          </div>
+          <span class="profile-order__amount">$412.50</span>
+          <span class="profile-order__status is-delivered">Delivered</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Wishlist panel ===== -->
+    <section class="profile-panel" data-profile-panel="wishlist">
+      <div class="profile-card">
+        <h2>Your Wishlist</h2>
+        <p>Items you've saved for later.</p>
+
+        <div class="profile-wishlist-grid" data-profile-wishlist-grid></div>
+      </div>
+    </section>
+
+    <!-- ===== Settings panel ===== -->
+    <section class="profile-panel" data-profile-panel="settings">
+      <div class="profile-card">
+        <h2>Preferences</h2>
+        <p>Control how Nitec looks and reaches you.</p>
+
+        <div class="profile-setting-row">
+          <div>
+            <h3>Dark Mode</h3>
+            <p>Switch between light and dark theme.</p>
+          </div>
+          <button class="btn btn--dark js-theme-toggle" type="button" aria-pressed="false">Toggle Theme</button>
+        </div>
+
+        <div class="profile-setting-row">
+          <div>
+            <h3>Order Updates</h3>
+            <p>Get notified about shipping and delivery status.</p>
+          </div>
+          <label class="form-checkbox">
+            <input type="checkbox" data-pref="orderUpdates">
+          </label>
+        </div>
+
+        <div class="profile-setting-row">
+          <div>
+            <h3>Promotional Emails</h3>
+            <p>Occasional discounts and new product drops.</p>
+          </div>
+          <label class="form-checkbox">
+            <input type="checkbox" data-pref="promoEmails">
+          </label>
+        </div>
+      </div>
+
+      <div class="profile-card profile-danger">
+        <h2>Clear Local Data</h2>
+        <p>Removes your cart, wishlist, and saved preferences from this browser only.</p>
+        <div class="profile-form-actions" style="justify-content: flex-start;">
+          <button class="btn btn--dark" type="button" data-clear-account-data>Clear My Data</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="neo-footer-strip">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html" aria-label="Nitec home">
+        <span class="footer-logo__mark" aria-hidden="true"></span>
+        <span>nitec.</span>
+      </a>
+      <p>Premium ecommerce catalog for modern tech essentials. Designed for a clean, confident, and elevated shopping experience.</p>
+    </div>
+
+    <div class="footer-contact" aria-label="Contact information">
+      <a class="footer-contact__item" href="mailto:support@nitec.store">
+        <i data-lucide="mail" aria-hidden="true"></i>
+        <span>support@nitec.store</span>
+      </a>
+      <a class="footer-contact__item" href="tel:+1234567890">
+        <i data-lucide="phone" aria-hidden="true"></i>
+        <span>+1 (234) 567-890</span>
+      </a>
+      <div class="footer-contact__item">
+        <i data-lucide="map-pin" aria-hidden="true"></i>
+        <address>San Francisco, CA &middot; United States</address>
+      </div>
+    </div>
+
+    <div class="footer-social" aria-label="Social media">
+      <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+      <a href="https://x.com" aria-label="X" target="_blank" rel="noreferrer"><i data-lucide="twitter" aria-hidden="true"></i></a>
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer"><i data-lucide="instagram" aria-hidden="true"></i></a>
+      <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noreferrer"><i data-lucide="facebook" aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-divider" aria-hidden="true"></div>
+
+  <div class="footer-bottom">
+    <div class="footer-meta">
+      <span>&copy; <span data-year>2026</span> Nitec. All rights reserved.</span>
+      <span>v1.0</span>
+      <span>Built with &hearts;</span>
+    </div>
+
+    <div class="footer-legal" aria-label="Legal links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <button class="footer-top" type="button" data-back-to-top aria-label="Back to top">
+        <i data-lucide="arrow-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</footer>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/plugin/relativeTime.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+<script type="module" src="js/sidebar.js"></script>
+<script type="module" src="js/core/app.js"></script>
+
+</body>
+</html>
