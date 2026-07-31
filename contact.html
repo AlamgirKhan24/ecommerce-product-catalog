@@ -134,60 +134,86 @@
         </button>
       </form>
     </section>
-    <footer class="neo-footer-strip">
-  <div class="footer-main">
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html" aria-label="Nitec home">
-        <span class="footer-logo__mark" aria-hidden="true"></span>
-        <span>nitec.</span>
-      </a>
-      <p>Premium ecommerce catalog for modern tech essentials. Designed for a clean, confident, and elevated shopping experience.</p>
-    </div>
-
-    <div class="footer-contact" aria-label="Contact information">
-      <a class="footer-contact__item" href="mailto:support@nitec.store">
-        <i data-lucide="mail" aria-hidden="true"></i>
-        <span>support@nitec.store</span>
-      </a>
-      <a class="footer-contact__item" href="tel:+1234567890">
-        <i data-lucide="phone" aria-hidden="true"></i>
-        <span>+1 (234) 567-890</span>
-      </a>
-      <div class="footer-contact__item">
-        <i data-lucide="map-pin" aria-hidden="true"></i>
-        <address>San Francisco, CA � United States</address>
+  </main>
+  <footer class="neo-footer-strip" aria-labelledby="site-footer-title">
+  <div class="nite-footer__inner">
+    <div class="nite-footer__top">
+      <div class="nite-footer__brand">
+        <h2 id="site-footer-title">
+          <a class="nite-logo" href="index.html" aria-label="Nite home">
+            <span class="nite-logo__mark" aria-hidden="true"></span>
+            <span class="nite-logo__text">Nitec</span>
+          </a>
+        </h2>
+        <p class="nite-footer__desc">Premium tech and lifestyle essentials curated for clean design, reliable performance, and confident everyday shopping.</p>
+        <address class="nite-footer__contact">
+          <a href="mailto:support@nite.store">support@nite.store</a>
+          <span>San Francisco, CA</span>
+        </address>
       </div>
+
+      <form class="nite-footer__newsletter" aria-label="Subscribe to Nite updates">
+        <label for="footer-email">Join product updates</label>
+        <div>
+          <input id="footer-email" type="email" placeholder="Email address">
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
     </div>
 
-    <div class="footer-social" aria-label="Social media">
-      <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i></a>
-      <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i data-lucide="linkedin" aria-hidden="true"></i></a>
-      <a href="https://x.com" aria-label="X" target="_blank" rel="noreferrer"><i data-lucide="twitter" aria-hidden="true"></i></a>
-      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noreferrer"><i data-lucide="instagram" aria-hidden="true"></i></a>
-      <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noreferrer"><i data-lucide="facebook" aria-hidden="true"></i></a>
+    <div class="nite-footer__grid">
+      <nav class="nite-footer__col" aria-label="Shop">
+        <h3 class="nite-footer__title">Shop</h3>
+        <ul class="nite-footer__links">
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html">New Arrivals</a></li>
+          <li><a href="shop.html">Best Sellers</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nite-footer__col" aria-label="Support">
+        <h3 class="nite-footer__title">Support</h3>
+        <ul class="nite-footer__links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">FAQs</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nite-footer__col" aria-label="Company">
+        <h3 class="nite-footer__title">Company</h3>
+        <ul class="nite-footer__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Partnerships</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nite-footer__col" aria-label="Social links">
+        <h3 class="nite-footer__title">Follow</h3>
+        <ul class="nite-footer__links nite-footer__links--social">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
 
-  <div class="footer-divider" aria-hidden="true"></div>
-
-  <div class="footer-bottom">
-    <div class="footer-meta">
-      <span>� <span data-year>2026</span> Nitec. All rights reserved.</span>
-      <span>v1.0</span>
-      <span>Built with &hearts;</span>
-    </div>
-
-    <div class="footer-legal" aria-label="Legal links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
-      <a href="cookies.html">Cookie Policy</a>
-      <button class="footer-top" type="button" data-back-to-top aria-label="Back to top">
-        <i data-lucide="arrow-up" aria-hidden="true"></i>
-      </button>
+    <div class="nite-footer__bottom">
+      <p>&copy; 2026 Nite. All rights reserved.</p>
+      <ul class="nite-footer__legal" aria-label="Legal links">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
     </div>
   </div>
 </footer>
-  </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
